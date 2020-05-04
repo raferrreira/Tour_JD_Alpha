@@ -1,0 +1,866 @@
+// default body layer
+
+.main-content-jd-plataform {
+    position: absolute;
+    width: 100% !important;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.row {
+    margin: 0 auto;
+}
+
+@media (min-width: 1200px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 1230px;
+    }
+}
+
+// VARIABLES --------------------------------
+
+// Main Colors
+@white-color: #fff;
+@green-color: #449738;
+@light-green-color: #bae79c;
+@yellow-color: #ffdd00;
+@black-color: #000;
+@gray-color: #8F8F8F;
+@light-gray-color: #DFDFDF;
+@lighter-gray-color: #F0F0F0;
+@blue-color: #337ab7;
+@red-color: #d9534f;
+@transparent: transparent;
+
+// Main Sizes
+@desktop-logo-size: 252px;
+@full-width: 100%;
+@90-width: 90%;
+@85-width: 85%;
+@75-width: 75%;
+
+// Main Font Sizes
+@giant-size: 40px;
+@big-size: 22px;
+@lg-size: 16px;
+@md-size: 14px;
+@small-size: 12px;
+
+// Main Font Weights
+@light-wgt: 300;
+@regular-wgt: 400;
+@medium-wgt: 500;
+@bold-wgt: 600;
+@black-wgt: 700;
+
+// align items
+@center: center;
+@right: right;
+@left: left;
+
+// MIXINS --------------------------------
+
+// Bring an object to the front layer
+.bring-to-front {
+    position: relative;
+    z-index: 99999;
+}
+
+.main-nav-styles {
+    width: @full-width;
+    .bring-to-front;
+}
+
+// Button
+.yellow-button {
+    background: @yellow-color;
+    color: @black-color;
+    width: @full-width;
+    font-size: @big-size;
+    font-weight: @bold-wgt;
+    margin-top: .2em;
+    border: none;
+    height: 42px;
+    text-align: center;
+}
+
+// Chat Messages
+.message-balloon {
+    padding: 10px 12px;
+    font-size: @md-size;
+    border-radius: 0;
+}
+
+.card-body {
+    .message-balloon;
+    line-height: 130%;
+}
+
+// Main Modals
+
+.JDmainmodal {
+    max-width: @75-width;
+    width: @75-width;
+    background: @transparent;
+}
+
+.modal-backdrop.show {
+    opacity: .2;
+}
+
+.main-modal-style {
+    transform: translate(0, -38%);
+
+    .close-btn {
+        right: 11.5em;
+        top: 28px;
+        z-index: 1;
+    }
+
+    .modal-dialog {
+        width: 60%;
+    }
+
+    .modal-content {
+        background: @white-color;
+
+        .max-height-scrolling {
+            max-height: 440px;
+            min-height: auto;
+            overflow: hidden;
+
+            .scrolling-max-height {
+                overflow: auto;
+                overflow-x: hidden;
+                max-height: 440px;
+                padding-bottom: 4em;
+            }
+        }
+    }
+
+    .modal-header {
+        background: @green-color;
+        .default-border;
+        height: 80px;
+
+        .modal-title {
+            color: @white-color;
+            font-size: @big-size + 5;
+            font-weight: @regular-wgt;
+        }
+    }
+}
+
+.line-on-text {
+    .subtitle {
+        color: @gray-color;
+        font-size: @small-size;
+        margin: 0 0 2em 0;
+        position: relative;
+    }
+
+    .fancy {
+        line-height: 0.5;
+        text-align: center;
+    }
+
+    .fancy span {
+        display: inline-block;
+        position: relative;
+    }
+
+    .fancy span:before,
+    .fancy span:after {
+        content: "";
+        border-top: 1px solid @gray-color;
+        position: absolute;
+        height: 5px;
+        top: 4px;
+        width: 140px;
+    }
+
+    .fancy span:before {
+        right: 100%;
+        margin-right: 15px;
+    }
+
+    .fancy span:after {
+        left: 100%;
+        margin-left: 15px;
+    }
+}
+
+// Main Form
+
+.main-form-style {
+    width: @full-width;
+
+    label {
+        font-weight: @bold-wgt;
+        font-size: @md-size;
+        color: @gray-color;
+        line-height: 20px;
+    }
+
+    input {
+        .default-border;
+        border: 1px solid @light-gray-color;
+        height: 40px;
+        font-size: @md-size;
+        width: @full-width;
+    }
+
+    .send-form-btn {
+        .default-btn;
+        .yellow-button;
+        padding: 0;
+    }
+
+    a {
+        color: @green-color;
+        font-weight: @medium-wgt;
+    }
+
+    .form-check {
+        label {
+            font-size: @md-size;
+            color: @gray-color;
+            font-weight: @regular-wgt;
+        }
+    }
+
+    .custom-checkbox .custom-control-label::before {
+        .default-border;
+        border: 1px solid @light-gray-color
+    }
+
+    .custom-control-input:checked~.custom-control-label::before {
+        border-color: @green-color;
+        background-color: @green-color;
+    }
+}
+
+// Default 
+.default-border {
+    border: none;
+    border-radius: 0;
+}
+
+.default-btn {
+    background: none;
+    .default-border;
+}
+
+.defaulttext {
+    color: @black-color;
+    font-size: @lg-size;
+}
+
+// FlexBox
+
+.flex-column {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.flex-centered-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+// Main Principal Page Style -------------------------------------
+
+// NavBar 
+.jd-main-navigation {
+    .main-nav-styles;
+    background: @white-color;
+
+    .main-logo-jd {
+        max-width: @desktop-logo-size;
+    }
+
+    .main-jd-link a {
+        .defaulttext;
+        font-weight: @bold-wgt;
+        width: @full-width;
+        text-align: @center;
+        cursor: pointer;
+    }
+
+    .conectese-btn {
+        border-left: 1px solid @light-gray-color;
+    }
+}
+
+
+
+// Bottom Section
+
+.jd-main-bottom-wrapper {
+    .main-nav-styles;
+
+    .footer-wrapper {
+        background: @white-color;
+        padding: 8px 2em;
+
+        .small-jd-link a {
+            font-size: @md-size;
+            color: @green-color;
+            font-weight: @regular-wgt;
+        }
+    }
+
+    // Hashtag 
+    .jd-main-hashtag {
+        font-size: @big-size;
+        font-weight: @bold-wgt;
+        color: @white-color;
+        font-style: italic;
+        text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+        padding: 2em 3em;
+    }
+
+    .copyrights {
+        color: @green-color;
+    }
+}
+
+
+// Chat Window
+
+.jd-main-chat-popup {
+    padding-right: 2em;
+
+    .card {
+        .default-border;
+    }
+
+    .card-header {
+        background: @green-color;
+        font-size: @lg-size;
+        color: @white-color;
+        .default-border;
+    }
+
+    .jd-alert {
+        background-color: @transparent;
+        color: @white-color;
+        font-size: @md-size;
+        .default-border;
+        margin-bottom: 1em;
+
+        .alert-text {
+            background-color: @green-color;
+            line-height: 130%;
+        }
+    }
+
+    .cadastrese-btn {
+        .yellow-button;
+    }
+
+    .chat-bottom-section {
+        height: 130px;
+        padding: 10px;
+
+        .form-control {
+            background-color: @light-gray-color;
+            font-style: @md-size;
+            color: @gray-color;
+            .default-border;
+            padding: 10px !important;
+            height: 60px;
+        }
+
+        .send-message-btn {
+            .yellow-button;
+        }
+    }
+
+    .jd-message {
+        .default-border;
+        background-color: @green-color;
+        color: @white-color;
+        width: @90-width;
+
+        .card-body {
+            .card-body;
+        }
+    }
+
+    .user-message {
+        background-color: @light-green-color;
+        color: @black-color;
+        width: @85-width;
+        border-radius: 0;
+        margin-top: .4em;
+        text-align: right;
+
+        .card-body {
+            .card-body;
+        }
+    }
+}
+
+// Main Modal
+
+JDmainmodal {
+    top: 50% !important;
+    transform: translate(0, -30%);
+    z-index: 100000 !important;
+
+    .container {
+        position: relative;
+    }
+
+    .close {
+        opacity: 1;
+        position: absolute;
+        right: 4.5em;
+        top: 10px;
+        width: 20px;
+        cursor: pointer;
+    }
+
+    .modal-dialog {
+        .JDmainmodal;
+    }
+
+    .modal-content {
+        background: @transparent;
+        .default-border;
+    }
+}
+
+.modal-backdrop {
+    z-index: 99999;
+}
+
+// ModalSpecialConditions
+
+#ModalSpecialConditions {
+    a {
+        width: @full-width;
+        position: relative;
+        display: table;
+        height: 100%;
+
+        h2 {
+            width: @full-width;
+            font-size: @giant-size;
+            color: @yellow-color;
+            font-weight: @bold-wgt;
+            font-style: italic;
+            text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+            position: absolute;
+            left: 50%;
+            bottom: 10%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            margin: 0;
+            line-height: 100%;
+
+            span {
+                color: @white-color;
+            }
+        }
+    }
+}
+
+// ModalEventCalendar
+
+#ModalEventCalendar {
+    .main-modal-style;
+
+    .nav-pills {
+        background: @yellow-color;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+
+        .nav-link {
+            background: @transparent;
+            color: @gray-color;
+            font-size: @big-size;
+            font-weight: @bold-wgt;
+            padding: 0;
+        }
+
+        .active {
+            color: @black-color;
+        }
+    }
+
+    .event-stuff-wrapper {
+        .event-date {
+            .flex-column;
+            color: @green-color;
+            font-weight: @bold-wgt;
+            text-align: center;
+
+            .month {
+                font-size: @big-size + 2;
+                line-height: 100%;
+            }
+
+            .day {
+                font-size: @big-size + 24;
+                line-height: 100%;
+            }
+        }
+
+        .event-infos {
+            .flex-column;
+
+            .event-name {
+                font-size: @big-size;
+                color: @gray-color;
+                font-weight: @bold-wgt;
+            }
+
+            .event-date-info,
+            .event-local {
+                font-size: @md-size;
+                color: @gray-color;
+                font-weight: @regular-wgt;
+            }
+        }
+
+        .event-signup {
+            display: flex;
+            justify-content: center;
+
+            .event-signup-btn {
+                .default-btn;
+                .flex-center;
+                border: 1px solid @green-color;
+                font-size: @lg-size;
+                color: @gray-color;
+                height: 72px;
+                max-width: 190px;
+            }
+
+            .signedup {
+                .yellow-button;
+                font-size: @lg-size;
+                height: 72px;
+                max-width: 190px;
+            }
+        }
+    }
+}
+
+// ModalConectese
+
+#ModalConectese,
+#ModalConcessionariosProximos {
+    .main-modal-style;
+
+    .modal-dialog {
+        max-width: 75%;
+        width: 75%;
+
+        .modal-content {
+            .max-height-scrolling {
+                max-height: 70vh;
+                min-height: auto;
+                display: flex;
+
+                .scrolling-max-height {
+                    max-height: 70vh;
+                }
+            }
+
+            .form-header {
+                h3 {
+                    color: @black-color;
+                    font-size: @big-size + 3;
+                    font-weight: @medium-wgt;
+                    margin-bottom: 1em;
+                }
+
+                small {
+                    color: @gray-color;
+                }
+            }
+
+            form {
+                .main-form-style;
+            }
+
+            .login-form {
+                .line-on-text;
+                padding: 2.125em;
+
+                .forgot-password {
+                    font-size: @small-size;
+                    font-weight: @regular-wgt;
+                    width: @full-width;
+                    text-align: center;
+                    padding: 1.5em;
+                    display: table;
+                }
+
+                .JD-Main-Login-Form {
+                    .login-with-socialnetwork {
+                        position: relative;
+                        margin-top: 43%;
+
+                        button {
+                            margin-bottom: .5em;
+                        }
+                    }
+                }
+            }
+
+            .cadastro-form {
+                padding: 2.125em;
+                border-left: 1px solid @light-gray-color;
+                height: 100%;
+            }
+        }
+    }
+}
+
+// Modal Selecionar Estado
+
+#ModalConcessionariosProximos {
+    .modal-content {
+        text-align: center;
+
+        h2 {
+            font-size: @big-size + 3;
+            color: @black-color;
+            font-weight: @regular-wgt;
+        }
+
+        h4 {
+            font-size: @big-size + 3;
+            color: @gray-color;
+            font-weight: @regular-wgt;
+            margin-bottom: 1.5em;
+        }
+
+        select {
+            .default-border;
+            border: 1px solid @green-color;
+            font-size: @lg-size;
+            color: @gray-color;
+            height: 65px;
+            padding: 1em;
+        }
+
+        button {
+            font-size: @lg-size;
+            font-weight: @bold-wgt;
+            height: 43px;
+            margin-top: 1em;
+        }
+
+        small {
+            margin-top: 1.5em;
+            color: @gray-color;
+
+            .termsnconditionslink {
+                color: @black-color;
+            }
+        }
+    }
+}
+
+// CHAT LEADS
+
+// MIXINS ------------------------
+
+.pill-button {
+    border: 1px solid @green-color;
+    color: @green-color;
+    font-size: @lg-size;
+    font-weight: @bold-wgt;
+    width: @full-width;
+    height: 35px;
+    text-align: center;
+    padding: 0 6em;
+}
+
+.green-link {
+    color: @green-color;
+    font-size: @lg-size;
+}
+
+.chat-message-home-header {
+    .flex-between;
+    background: @lighter-gray-color;
+    border: 1px solid @light-gray-color;
+    min-height: 175px;
+
+    p {
+        margin: 0;
+        color: @black-color;
+    }
+}
+
+// -------------------------------
+
+// CHAT LEAD WRAPPER
+.content-chatlead-wrapper {
+    padding: 4em;
+    padding-bottom: 0;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.94) 100%);
+    box-shadow: 4px 8px 110px rgba(0, 0, 0, 0.25);
+    height: 94vh;
+    margin-bottom: .5em;
+}
+
+.chat-leads-jd-plataform {
+    background: #E5E5E5;
+}
+
+
+// HOME
+
+.main-jd-chat-user {
+    p {
+        .defaulttext;
+        font-weight: @medium-wgt;
+        margin: 0;
+    }
+
+    a {
+        .green-link;
+        text-align: right;
+    }
+}
+
+.chatleads-content-wrapper {
+    .nav-pills {
+        .flex-centered-between;
+
+        a {
+            .default-border;
+            .default-btn;
+            .flex-center;
+            .pill-button;
+
+            &.active {
+                background: @green-color;
+                color: @white-color;
+            }
+        }
+
+    }
+}
+
+// CHAT
+
+.chat-message-home-wrapper {
+    font-size: @md-size;
+    flex: 0 0 26.333333%;
+    max-width: 26.333333%;
+
+    .chat-message-home-head {
+        .chat-message-home-header;
+    }
+
+    .chat-message-home-body {
+        border: 1px solid @light-gray-color;
+        margin-top: 5px;
+        min-height: 170px;
+    }
+}
+
+.chat-wrapper {
+    .chat-message-home-head {
+        .chat-message-home-header;
+
+        small {
+            color: @black-color;
+        }
+    }
+
+    .chat-room.small-chat .my-custom-scrollbar {
+        height: 400px;
+        border: 1px solid @light-gray-color;
+        margin-bottom: 1em;
+    }
+
+    .jd-main-chat-popup {
+        padding: 0;
+        margin-top: 1em;
+    }
+
+    .yellow-button {
+        max-width: 190px;
+        height: 65px;
+        margin: 0;
+    }
+
+    #write-message {
+        .default-border;
+        width: 84%;
+        background-color: @white-color;
+        border: 1px solid @light-gray-color;
+        height: 65px;
+    }
+
+    .chat-bottom-section {
+        height: auto;
+    }
+}
+
+// MESSAGES
+
+.messages-wrapper {
+    .nav-link {
+        font-size: @lg-size;
+        cursor: pointer;
+        padding: 0;
+        margin-right: 5px;
+
+        &.active {
+            font-weight: @bold-wgt;
+            color: @black-color;
+        }
+    }
+
+    .yellow-button {
+        max-width: 250px;
+        margin: 0;
+        height: 68px;
+        ;
+    }
+
+    .message-resume-infos {
+        width: @full-width;
+        background: @lighter-gray-color;
+        padding: 10px;
+
+    }
+
+    .messages-list {
+        margin-bottom: .5em;
+    }
+}

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+		<!-- TITLE -->
+		<title>John Deere Conecta</title>
+
+		<!-- ICONS -->
+		<link rel='apple-touch-icon' sizes='180x180' href='website-images/favicon.png'>
+		<link rel='icon' type='image/png' sizes='32x32' href='website-images/favicon.png'>
+		<link rel='icon' type='image/png' sizes='16x16' href='website-images/favicon.png'>
+
+		<!-- SITE INFOS -->
+		<meta property="og:locale" content="pt_BR" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="John Deere Conecta" />
+		<meta property="og:url" content="" />
+		<meta property="og:site_name" content="John Deere Conecta" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="mobile-web-app-capable" content="yes" />
+
+		<!-- Bootstrap 4.4 CDN -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		
+		<!-- STYLE -->
+		<link rel="stylesheet/less" type="text/css" href="style/styles.less" />
+		<link rel="stylesheet/less" type="text/css" href="style/chat-window.min.css" />
+		
+		<!-- LESS 3.9 -->
+		<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+
+		<style type="text/css" title="Default">
+			/* fullscreen */
+			html {
+				height:100%;
+			}
+			body {
+				height:100%;
+				margin: 0px;
+				overflow:hidden; /* disable scrollbars */
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* remove highlight on tab for iOS/Android */
+			}
+			/* fix for scroll bars on webkit & >=Mac OS X Lion */ 
+			::-webkit-scrollbar {
+				background-color: rgba(0,0,0,0.5);
+				width: 0.75em;
+			}
+			::-webkit-scrollbar-thumb {
+    			background-color:  rgba(255,255,255,0.5);
+			}
+		</style>	
+	</head>
+	<body>
+		
+		<!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - -->
+		<script type="text/javascript" src="pano2vr_player.js"></script>
+		<script type="text/javascript" src="skin.js"></script>
+		<script src="webvr/three.min.js"></script>
+		<script src="webvr/webvr-polyfill.min.js"></script>
+		<div id="container" style="width:100%;height:100%;overflow:hidden;">
+			<br>Loading...<br><br>
+		</div>
+		<script type="text/javascript">
+	
+			// create the panorama player with the container
+			pano=new pano2vrPlayer("container");
+			// add the skin object
+			skin=new pano2vrSkin(pano);
+			// load the configuration
+		
+			window.addEventListener("load", function() {
+				pano.readConfigUrlAsync("pano.xml");
+			});
+		</script>
+		<noscript>
+			<p><b>Please enable Javascript!</b></p>
+		</noscript>
+<!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - --> 
+		<!-- Hack needed to hide the url bar on iOS 9, iPhone 5s --> 
+		<div style="width:1px;height:1px;"></div>
+
+		<div class="container-fluid main-content-jd-plataform p-0">
+
+			<!-- JD HEADER -->
+			<section>
+				<div class="container jd-content-wrapper p-0">
+					<div class="row">
+						<ul class="nav nav-pills nav-fill jd-main-navigation">
+							<li class="nav-item">
+								<img alt="" src="website-images/jd_logo_desktop.png" class="float-left img-fluid main-logo-jd"/>
+							</li>
+							<li class="nav-item main-jd-link d-flex align-items-center">
+								<a class="nav-link" data-toggle="modal" data-target="#ModalSpecialConditions">Condições Especiais & Financiamentos</a>
+							</li>
+							<li class="nav-item main-jd-link d-flex align-items-center">
+								<a class="nav-link" data-toggle="modal" data-target="#ModalEventCalendar">Agenda de Eventos</a>
+							</li>
+							<li class="nav-item main-jd-link d-flex align-items-center" id="openJDChatWindow">
+								<a class="nav-link">Fale com Concessionário</a>
+							</li>
+							<li class="nav-item conectese-btn main-jd-link d-flex align-items-center" data-toggle="modal" data-target="#ModalConectese">
+								<a class="nav-link">Conecte-se</a>
+							</li>
+						</ul>
+					</div> 
+				</div>
+			</section>
+
+			<!-- JD BOTTOM SECTION -->
+			<section>
+				<div class="container-fluid jd-main-bottom-wrapper p-0">
+					<section class="d-flex align-items-end justify-content-between">
+						<!-- HASHTAG -->
+						<div class="jd-main-hashtag">
+							<span>#JOHNDEERECONECTA</span>
+						</div> 
+						<!-- CHAT WINDOW -->
+						<div class="jd-main-chat-popup">
+							<div class="d-flex flex-row-reverse">
+								<div class="card chat-room small-chat wide slim" id="JDMainChat">
+								  <div class="card-header d-flex align-items-center justify-content-between p-2" id="toggle" style="cursor: pointer;">
+									<div class="heading d-flex justify-content-center">
+									  <p class="m-0">Chat Online</p>
+									</div>
+									<div class="icons grey-text"> 
+									  <a id="closeButton">_</a>
+									</div>
+								  </div>
+								  <div class="my-custom-scrollbar" id="message">
+									<div class="card-body p-2">
+									  <div class="chat-message">  
+										<div class="jd-alert card w-100">
+											<div class="card-body p-3 alert-text">
+												<p class="card-text">
+													<b id="user_name">John Deere Conecta:</b><br/>
+													Para falar com um de nossos concessionários faça seu cadastro John Deere Conecta clicando no botão abaixo
+												</p>
+											</div>
+											<div class="card-body p-0">
+												<button class="cadastrese-btn" data-toggle="modal" data-target="#ModalConectese">Cadastrar-se</button>
+											</div>
+										</div>  
+										<div class="jd-message card z-depth-0 mb-1 message-text m-0 float-left">
+										  <div class="card-body p-2">
+											<p class="card-text">
+												<b id="user_name">Concessionário:</b><br/>
+												Nostrum minima cupiditate assumenda, atque cumque hic voluptatibus at corporis maxime quam harum.</p>
+										  </div>
+										</div>  
+										<div class="user-message card float-right z-depth-0 mb-2">
+										  <div class="card-body p-2">
+											<p class="card-text">
+												<b id="user_name">Visitante:</b><br/>
+												Rem suscipit lorum repellendus ditiis?</p>
+										  </div>
+										</div>
+										  
+									  </div>
+									</div>
+								  </div>
+								  <div class="card-footer text-muted chat-bottom-section">
+									<textarea type="text" id="write-message" class="form-control" placeholder="Escreva aqui sua mensagem"> </textarea>
+									<button class="send-message-btn disabled" id="send-message">Enviar</button>
+								  </div>
+								</div>
+								
+							  </div>
+						</div> 
+					</section>
+					<!-- FOOTER -->
+					<section class="footer-wrapper">
+						<div class="row">
+							<footer class="jd-main-footer w-100 d-flex align-items-center justify-content-between">
+								<ul class="nav nav-pills nav-fill jd-main-oottom-navigation"> 
+									<li class="nav-item small-jd-link">
+										<a class="nav-link" href="#">Privacidade e Dados</a>
+									</li>
+									<li class="nav-item small-jd-link">
+										<a class="nav-link" href="#">Política de Cookies</a>
+									</li>
+									<li class="nav-item small-jd-link">
+										<a class="nav-link" href="#">Fale Conosco</a>
+									</li>
+									<li class="nav-item small-jd-link">
+										<a class="nav-link " href="#">Aviso Legal</a>
+									</li>
+								</ul>
+								<small class="copyrights">Copyright © 2020 Deere & Company. Todos os direitos reservados</small>
+							</footer>
+						</div>
+					</section>
+				</div>
+			</section>
+
+			<!---------------------------MODALS----------------------------->
+
+			<!-- Condições Especiais e Financiamentos -->
+			<JDmainmodal class="modal fade p-0 " id="ModalSpecialConditions" tabindex="-1" role="dialog" aria-labelledby="ModalSpecialConditions" aria-hidden="true">
+				<div class="container p-0">
+					<img alt=""src="website-images/fa-close-btn.png" type="button" class="close" data-dismiss="modal" aria-label="Fechar"/>
+					<div class="modal-dialog" role="document">
+						<div class="modal-content p-0">
+							<div class="modal-body d-flex align-items-center justify-content-center p-0">
+								<div class="col-md-4 col-lg-4 p-0 image-block-conditions">
+									<a href="" target="_blank">
+										<h2 style="bottom: 4%;"><span>BANCO</span><br/>JOHN<br/>DEERE</h2>
+										<img alt="" class="img-fluid" src="website-images/bancoimg.PNG"/>
+									</a>
+								</div>
+								<div class="col-md-4 col-lg-4 p-0 image-block-conditions">
+									<a href="" target="_blank">
+										<h2><span>CONSÓRCIO</span><br/>JOHN DEERE</h2>
+										<img alt="" class="img-fluid" src="website-images/consorcioimg.PNG"/>
+									</a>
+								</div>
+								<div class="col-md-4 col-lg-4 p-0 image-block-conditions">
+									<a href="" target="_blank">
+										<h2><span>CUPONS DE</span><br/>DESCONTOS</h2>
+										<img alt="" class="img-fluid" src="website-images/cupomimg.PNG"/>
+									</a>
+								</div>
+							</div> 
+						</div>
+					</div>
+				</div>
+			</JDmainmodal>
+
+			<!-- Agenda de Eventos -->
+			<JDmainmodal class="modal fade p-0 " id="ModalEventCalendar" tabindex="-1" role="dialog" aria-labelledby="ModalEventCalendar" aria-hidden="true">
+				<div class="container p-0">
+					<img alt="" src="website-images/fa-close-btn.png" type="button" class="close close-btn" data-dismiss="modal" aria-label="Fechar"/>
+					<div class="modal-dialog" role="document">
+						<div class="modal-header">
+							<h5 class="modal-title">Agenda de Eventos John Deere</h5> 
+						</div>
+						<div class="modal-content p-0">
+							<div class="modal-body p-0">
+								<ul class="nav nav-pills mb-4 w-100 px-4 py-3" id="pills-tab" role="tablist">
+									<li class="nav-item pr-5">
+										<a class="nav-link active" id="pills-feira-tab" data-toggle="pill" href="#pills-feira" role="tab" aria-controls="pills-feira" aria-selected="true">Feiras</a>
+									</li>
+									<li class="nav-item pr-5">
+										<a class="nav-link" id="pills-treinmentos-tab" data-toggle="pill" href="#pills-treinmentos" role="tab" aria-controls="pills-treinmentos" aria-selected="false">Treinamentos</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" id="pills-palestras-tab" data-toggle="pill" href="#pills-palestras" role="tab" aria-controls="pills-palestras" aria-selected="false">Palestras</a>
+									</li>
+								</ul>
+								<div class="tab-content w-100 max-height-scrolling" id="pills-tabContent">
+									<div class="scrolling-max-height tab-pane fade show active" id="pills-feira" role="tabpanel" aria-labelledby="pills-feira"> 
+										<div class="event-stuff-wrapper mb-3 p-0 col-lg-12 d-flex align-items-center justify-content-between">
+											<div class="col-lg-2 event-date pl-0">
+												<span class="month">JUN</span> 
+												<span class="day">15</span>
+											</div>
+											<div class="col-lg-6 event-infos p-0">
+												<h4 class="event-name">Lorem Ipsum Dolor Sit Amet</h4>
+												<small class="event-date-info">Sáb. Início 11:00 am. Término 14:00 pm</small>
+												<small class="event-local">São Paulo, SP</small>
+											</div>
+											<div class="col-lg-4 event-signup pr-0">
+												<button class="event-signup-btn w-100">
+													Inscrever-se
+												</button>
+											</div>
+										</div>  
+										<div class="event-stuff-wrapper mb-3 p-0 col-lg-12 d-flex align-items-center justify-content-between">
+											<div class="col-lg-2 event-date pl-0">
+												<span class="month">JUN</span> 
+												<span class="day">15</span>
+											</div>
+											<div class="col-lg-6 event-infos p-0">
+												<h4 class="event-name">Lorem Ipsum Dolor Sit Amet</h4>
+												<small class="event-date-info">Sáb. Início 11:00 am. Término 14:00 pm</small>
+												<small class="event-local">São Paulo, SP</small>
+											</div>
+											<div class="col-lg-4 event-signup pr-0">
+												<button class="event-signup-btn w-100 signedup">
+													Inscrito
+												</button>
+											</div>  
+										</div>  
+									</div>
+									<div class="scrolling-max-height tab-pane fade" id="pills-treinmentos" role="tabpanel" aria-labelledby="pills-treinmentos">
+										<p>- Insira o conteúdo desejado aqui -</p>
+									</div>
+									<div class="scrolling-max-height tab-pane fade" id="pills-palestras" role="tabpanel" aria-labelledby="pills-palestras">
+										<p>- Insira o conteúdo desejado aqui -</p>
+									</div>
+								</div>
+							</div> 
+						</div>
+					</div>
+				</div>
+			</JDmainmodal>
+
+			<!-- Modal Conecte-se -->
+			<JDmainmodal class="modal fade p-0 " id="ModalConectese" tabindex="-1" role="dialog" aria-labelledby="ModalConectese" aria-hidden="true">
+				<div class="container p-0">
+					<img alt=""src="website-images/fa-close-btn.png" type="button" class="close" data-dismiss="modal" aria-label="Fechar"/>
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="max-height-scrolling">
+								<div class="modal-body scrolling-max-height  d-flex justify-content-between p-0">
+									<div class="col-lg-6 login-form">
+										<div class="form-header">
+											<h3 class="w-100">Login</h3>
+										</div>
+										<div class="JD-Main-Login-Form">
+											<form class="needs-validation" novalidate>
+												<div class="col-md-12 mb-2 p-0">
+													<!-- Email -->
+													<label for="validationUser">Usuário:</label>
+													<input type="email" class="form-control" id="validationUser" placeholder="endereço de e-mail" value="" required>
+													<div class="valid-feedback">
+													Tudo certo!
+													</div>
+													<div class="invalid-feedback">
+														Por favor, insira o seu usuário.
+													</div>
+												</div>
+	
+												<!-- Senha -->
+												<div class="col-md-12 mb-2 p-0">
+													<label for="validationUserPassword">Senha:</label>
+													<input type="password" class="form-control" id="validationUserPassword" placeholder="Insira Senha" value="" required>
+													<div class="valid-feedback">
+														Tudo certo!
+													</div>
+													<div class="invalid-feedback">
+														Por favor, digite sua senha.
+													</div>
+												</div>  
+												
+												<div class="col-md-12 mb-2 p-0">
+													<a href="" class="forgot-password">Esqueci Minha Senha</a>
+												</div>
+	
+												<button class="btn send-form-btn" data-toggle="modal" data-target="#ModalConcessionariosProximos">Conectar</button>
+											</form>
+											<div class="login-with-socialnetwork">
+												<p class="subtitle fancy"><span>ou entre com</span></p>
+												<button class="default-btn">
+													<img src="website-images/facebook-btn.PNG" class="img-fluid"/>
+												</button>
+												<button class="default-btn">
+													<img src="website-images/google-btn.PNG" class="img-fluid"/>
+												</button>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6 cadastro-form d-table">
+										<div class="form-header d-flex w-100 align-items-top  justify-content-between">
+											<h3>Cadastro</h3>
+											<small>*Campos Obrigatórios</small>
+										</div>
+										<form class="needs-validation" novalidate>
+												<div class="col-md-12 mb-2 p-0">
+												<!-- Email -->
+													<label for="validationEmail">E-mail*</label>
+													<input type="email" class="form-control" id="validationEmail" placeholder="endereço de e-mail" value="" required>
+													<div class="valid-feedback">
+														Tudo certo!
+													</div>
+													<div class="invalid-feedback">
+														Por favor, digite o seu e-mail.
+													</div>
+												</div>
+	
+												<!-- Senha -->
+												<div class="col-md-12 mb-2 p-0">
+												<label for="validationPassword">Senha*</label>
+												<input type="password" class="form-control" id="validationPassword" placeholder="*********" value="" required>
+												<div class="valid-feedback">
+													Tudo certo!
+												</div>
+												<div class="invalid-feedback">
+													Por favor, digite uma senha válida.
+												</div>
+												</div> 
+	
+												<!-- Nome -->
+												<div class="col-md-12 mb-2 p-0">
+													<label for="validationName">Nome*</label>
+													<input type="name" class="form-control" id="validationName" placeholder="Insira seu nome" value="" required>
+													<div class="valid-feedback">
+														Tudo certo!
+													</div>
+													<div class="invalid-feedback">
+														Por favor, digite o seu nome.
+													</div>
+												</div> 
+	
+												<!-- CEP -->
+												<div class="col-md-12 mb-2 p-0">
+													<label for="validationName">CEP</label>
+													<input type="CEP" class="form-control" id="validationName" placeholder="XXXXX-XXX" value=""> 
+												</div>
+	
+												<!-- Telefone -->
+												<div class="col-md-12 mb-4 p-0">
+													<label for="validationPhone">Telefone</label>
+													<input type="phone" class="form-control" id="validationPhone" placeholder="(XX) XXXXX-XXXX" value=""> 
+												</div>
+	
+												<!-- Aceitar termos -->
+												<div class="form-check p-0 mb-3">
+													<div class="custom-control custom-checkbox">
+														<input class="form-check-input custom-control-input" type="checkbox" value="" id="ContactedByJD" required>
+														<label class="form-check-label custom-control-label" for="ContactedByJD">
+															Aceito ser contatado por chat, e-mail<br>ou telefone por um representante <a href="">John Deere</a>
+														</label>
+														<div class="invalid-feedback">
+															Você deve concordar, antes de continuar.
+														</div>
+													</div>
+												</div>
+	
+												<div class="form-check mb-4 ml-1">
+													<div class="custom-control custom-checkbox p-0">
+														<input class="form-check-input custom-control-input" type="checkbox" value="" id="TermsandConditions" required>
+														<label class="form-check-label custom-control-label" for="TermsandConditions">
+															Aceito os termos e politicas de privacidade<br>da <a href="">John Deere</a>
+														</label>
+														<div class="invalid-feedback">
+															Você deve concordar, antes de continuar.
+														</div>
+													</div>
+												</div>
+	
+											<button class="btn send-form-btn" type="submit">Enviar</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div> 
+					</div>
+				</div>
+			</JDmainmodal>
+
+			<!-- Modal Concessionários mais próximos -->
+			<JDmainmodal class="modal fade p-0 " id="ModalConcessionariosProximos" tabindex="-1" role="dialog" aria-labelledby="ModalConcessionariosProximos" aria-hidden="true">
+				<div class="container p-0">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="max-height-scrolling p-5">
+								<div class="modal-body scrolling-max-height p-5 d-flex justify-content-center align-items-center p-0">
+									<div class="col-lg-10 ConcessionariosProximos-form">
+										<div class="form-header">
+											<h2>Bem vindo à<br>JohnDeere Coneceta</h2>
+											<h4>Estes são os concessionários mais próximos,<br>escolha o de sua preferência</h4>
+										</div>
+										<div class="JD-Main-State-Form px-5">
+											<form class="needs-validation px-4" novalidate>
+												<div class="col-md-12 mb-2 p-0">
+													<!-- Estado Select -->
+													<select class="form-control state-select">
+														<option>Escolha o Estado</option>
+														<option>Estado 1</option>
+														<option>Estado 2</option>
+														<option>Estado 3</option>
+													</select>
+												</div> 
+												<button class="col-lg-12 state-btn yellow-button">Concessionária Aster Tangara da Serra - São Paulo</button>
+												<button class="col-lg-12 state-btn yellow-button">Concessionária Lorem Ipsum - São Paulo</button>
+												<button class="col-lg-12 mb-4 state-btn yellow-button">Concessionária Dolor Sit Amet - São Paulo</button>
+												<small>Clicando no botão acima você estará concordando com<br>
+													os <a href="" class="termsnconditionslink">Termos de Uso e Políticas de Privacidade da John Deere.</a></small>
+											</form> 
+										</div>
+									</div> 
+								</div>
+							</div>
+						</div> 
+					</div>
+				</div>
+			</JDmainmodal>
+		</div> 
+
+		<!-- Bootstrap 4.4 CDN -->
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+		<!-- MAIN JS -->
+		<script src="js/main.min.js"></script>
+
+		
+	</body>
+</html>

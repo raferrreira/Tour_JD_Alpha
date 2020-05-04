@@ -1,0 +1,170 @@
+[
+    {   
+        "ID": "5E",
+        "title": "Tratores 5E",
+        "numero": 3,
+        "modelos":[
+            "descricoes/5080E.html",
+            "descricoes/5080EN.html",
+            "descricoes/5090E.html"
+        ]
+    },
+    {
+        "ID": "6M",
+        "title": "Tratores 6M",
+        "numero": 5,
+        "modelos": [
+            "descricoes/6135M.html",
+            "descricoes/6150M.html",
+            "descricoes/6170M.html",
+            "descricoes/6190M.html",
+            "descricoes/6210M.html"
+        ]
+    },
+    {
+        "ID": "7J",
+        "title": "Tratores 7J",
+        "numero": 3,
+        "modelos": [
+            "descricoes/7200J.html",
+            "descricoes/7215J.html",
+            "descricoes/7230J.html"
+        ]
+    },
+    {
+        "ID": "8R",
+        "title": "Tratores 8R",
+        "numero": 6,
+        "modelos": [
+            "descricoes/8270R.html",
+            "descricoes/8295R.html",
+            "descricoes/8320R.html",
+            "descricoes/8345R.html",
+            "descricoes/8370R.html",
+            "descricoes/8400R.html"
+        ]
+    },
+    {
+        "ID": "9RX",
+        "title": "Tratores 9RX",
+        "numero": 2,
+        "modelos": [
+            "descricoes/9470RX.html",
+            "descricoes/9520RX.html"  
+        ]      
+    },
+    {
+        "ID": "1100",
+        "title": "Plantadeira 1100",
+        "numero": 4,
+        "modelos": [
+            "descricoes/1107.html",
+            "descricoes/1109.html",
+            "descricoes/1111.html",
+            "descricoes/1113.html"
+        ]
+    },
+    {
+        "ID": "2100",
+        "title": "Plantadeira 2100",
+        "numero": 7,
+        "modelos": [
+            "descricoes/2113.html",
+            "descricoes/2115.html",
+            "descricoes/2117.html",
+            "descricoes/2122.html",
+            "descricoes/2126.html",
+            "descricoes/2130.html",
+            "descricoes/2134.html"
+        ]
+    },
+    {
+        "ID": "DBEE",
+        "title": "Plantadeira DB EE",
+        "numero": 3,
+        "modelos": [
+            "descricoes/DB40.html",
+            "descricoes/DB50.html",
+            "descricoes/DB74.html"
+        ]
+    },
+    {
+        "ID": "DB90",
+        "title": "Plantadeira DB 90",
+        "numero": 1,
+        "modelos": [
+            "descricoes/DB90.html"
+        ]
+    },
+    {
+        "ID": "CH570",
+        "title": "Colhedora de Cana",
+        "numero": 1,
+        "modelos": [
+            "descricoes/CH570.html"
+        ]
+    },
+    {
+        "ID": "S400",
+        "title": "Colheitadeira S400",
+        "numero": 2,
+        "modelos": [
+            "descricoes/S430.html",
+            "descricoes/S440.html"
+        ]
+    },
+    {
+        "ID": "S500",
+        "title": "Colheitadeira S500",
+        "numero": 1,
+        "modelos": [
+            "descricoes/S550.html"
+        ]
+    },
+    {
+        "ID": "S700",
+        "title": "Colheitadeira S700",
+        "numero": 4,
+        "modelos": [
+            "descricoes/S760.html",
+            "descricoes/S770.html",
+            "descricoes/S780.html",
+            "descricoes/S790.html"
+        ]
+    },
+    {
+        "ID": "M4000",
+        "title": "Pulverizador M4000",
+        "numero": 3,
+        "modelos": [
+            "descricoes/M4025.html",
+            "descricoes/M4030.html",
+            "descricoes/M4040.html"
+        ]
+    },
+    {
+        "ID": "PLA",
+        "title": "Pulverizador PLA",
+        "numero": 2,
+        "modelos": [
+            "descricoes/120J.html",
+            "descricoes/125J.html"
+        ]
+    },
+    {
+        "ID": "DRYBOX",
+        "title": "Dry Box",
+        "numero": 1,
+        "modelos": [
+            "descricoes/M4040DN.html"
+        ]
+    },
+    {
+        "ID": "NO_ID",
+        "title": "Green System",
+        "numero": 1,
+        "modelos": [
+            "descricoes/DN1006.html"
+        ]
+    }
+]
