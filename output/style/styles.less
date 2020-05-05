@@ -1,5 +1,39 @@
-// default body layer
+// JD FONT FAMILY
+@font-face{
+    font-family: JDff Roman;
+    src: url('../font-face/JDSansPro-Bold.ttf');
+    font-weight: 700;
+}
 
+@font-face{
+    font-family: JDff Roman;
+    src: url('../font-face/JDSansPro-Semibold.ttf');
+    font-weight: 600;
+}
+
+@font-face{
+    font-family: JDff Roman;
+    src: url('../font-face/JDSansPro-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face{
+    font-family: JDff Roman;
+    src: url('../font-face/JDSansPro-Book.ttf');
+    font-weight: 400;
+}
+
+@font-face{
+    font-family: JDff Roman;
+    src: url('../font-face/JDSansPro-Light.ttf');
+    font-weight: 300;
+}
+
+body{
+    font-family: JDff Roman, sans-serif; 
+}
+
+// default body layer
 .main-content-jd-plataform {
     position: absolute;
     width: 100% !important;
@@ -60,8 +94,8 @@
 @light-wgt: 300;
 @regular-wgt: 400;
 @medium-wgt: 500;
-@bold-wgt: 600;
-@black-wgt: 700;
+@bold-wgt: 700;
+@black-wgt: 600;
 
 // align items
 @center: center;
@@ -92,6 +126,14 @@
     border: none;
     height: 42px;
     text-align: center;
+    transition: .5s;
+    &:hover{
+        background: @transparent;
+        border: 1px solid @yellow-color;
+        color: @gray-color;
+        font-weight: 400;
+        transition: .5s;
+    }
 }
 
 // Chat Messages
@@ -723,6 +765,8 @@ JDmainmodal {
     }
 }
 
+@z-index-ontop: 10;
+
 // -------------------------------
 
 // CHAT LEAD WRAPPER
@@ -802,9 +846,13 @@ JDmainmodal {
     }
 
     .chat-room.small-chat .my-custom-scrollbar {
-        height: 400px;
+        height: 250px;
         border: 1px solid @light-gray-color;
         margin-bottom: 1em;
+    }
+
+    .chat-room.small-chat .my-custom-scrollbar>.card-body {
+        max-height: 240px;
     }
 
     .jd-main-chat-popup {
@@ -834,6 +882,7 @@ JDmainmodal {
 // MESSAGES
 
 .messages-wrapper {
+    position: relative;
     .nav-link {
         font-size: @lg-size;
         cursor: pointer;
@@ -850,7 +899,6 @@ JDmainmodal {
         max-width: 250px;
         margin: 0;
         height: 68px;
-        ;
     }
 
     .message-resume-infos {
@@ -863,4 +911,90 @@ JDmainmodal {
     .messages-list {
         margin-bottom: .5em;
     }
+    .opened-message {
+        background: #fff;
+        display: none;
+    }  
+    .opened-message.show{
+        display: block!important;
+        position: absolute;
+        top: 0;
+        z-index: 10;
+    }
+    .chat-wrapper .chat-room.small-chat .my-custom-scrollbar {
+        max-height: 250px;
+    }
+    .chat-room.small-chat .my-custom-scrollbar>.card-body {
+        max-height: 240px;
+    }
+    #prev-message, #next-message{
+        font-weight: @regular-wgt;
+        background: @transparent;
+        border: 1px solid @green-color;
+    }
+    #prev-message{
+        .default-border;
+        background: @lighter-gray-color;
+    }
+
+    .pagination{
+        .page-link{
+            .default-border;
+            .flex-center;
+            color: @black-color;
+            background: @lighter-gray-color;
+            border-radius: 0;
+            width: 60px;
+            height: 40px;
+            &.active{
+                background: @green-color;
+                color: @white-color;
+                font-weight: @bold-wgt;
+            }
+        }
+    }
+    
+}
+
+// EXTRAIR BASE
+
+.extrairbase-wrapper{
+    p{
+        font-size: @big-size;
+    }
+    #datepicker{
+        input{
+            .default-border;
+            border: 1px solid @green-color;
+            width: 210px;
+            height: 57px;
+            margin-right: 10px;
+        }
+        label{
+            font-style: italic;
+            position: relative;
+            top: -25px;
+            left: 20px;
+            font-weight: bold;
+        }
+        [type="date"]::-webkit-inner-spin-button {
+            display: none;
+        }
+        [type="date"]::-webkit-calendar-picker-indicator {
+            font-size: 10px;
+        }  
+    }
+
+    #extrairbasedia {
+        margin-left: 2em;
+    }
+
+    .yellow-button{
+        font-size: @lg-size;
+        font-weight: @bold-wgt;
+        height: 57px;
+        max-width: 225px;
+        margin: 0; 
+    }
+    
 }

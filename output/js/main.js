@@ -50,6 +50,21 @@ $('button[data-toggle="modal"]').on('click', function () {
     };
 });
 
+
+const $JDmessagebutton = $('.opened-message');
+
+$('a[aria-controls="pills-messages"]').on('click', function () {
+
+    if ($JDmessagebutton.hasClass('show')) { 
+        $JDmessagebutton.removeClass('show');
+    };
+});
+
+
+$('button[href="#pills-message"]').on('click', function () {
+      $JDmessagebutton.addClass('show');
+});
+
 // slider
 $('.owl-carousel').owlCarousel({
   loop:true,
@@ -71,3 +86,4 @@ $('.owl-carousel').owlCarousel({
       }
   }
 });
+ 
