@@ -1,36 +1,36 @@
 // JD FONT FAMILY
-@font-face{
+@font-face {
     font-family: JDff Roman;
     src: url('../font-face/JDSansPro-Bold.ttf');
     font-weight: 700;
 }
 
-@font-face{
+@font-face {
     font-family: JDff Roman;
     src: url('../font-face/JDSansPro-Semibold.ttf');
     font-weight: 600;
 }
 
-@font-face{
+@font-face {
     font-family: JDff Roman;
     src: url('../font-face/JDSansPro-Medium.ttf');
     font-weight: 500;
 }
 
-@font-face{
+@font-face {
     font-family: JDff Roman;
     src: url('../font-face/JDSansPro-Book.ttf');
     font-weight: 400;
 }
 
-@font-face{
+@font-face {
     font-family: JDff Roman;
     src: url('../font-face/JDSansPro-Light.ttf');
     font-weight: 300;
 }
 
-body{
-    font-family: JDff Roman, sans-serif; 
+body {
+    font-family: JDff Roman, sans-serif;
 }
 
 // default body layer
@@ -127,7 +127,8 @@ body{
     height: 42px;
     text-align: center;
     transition: .5s;
-    &:hover{
+
+    &:hover {
         background: @transparent;
         border: 1px solid @yellow-color;
         color: @gray-color;
@@ -377,20 +378,21 @@ body{
         }
     }
 
-    // Hashtag 
-    .jd-main-hashtag {
-        font-size: @big-size;
-        font-weight: @bold-wgt;
-        color: @white-color;
-        font-style: italic;
-        text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
-        padding: 2em 3em;
-    }
-
     .copyrights {
         color: @green-color;
     }
 }
+
+// Hashtag 
+.jd-main-hashtag {
+    font-size: @big-size;
+    font-weight: @bold-wgt;
+    color: @white-color;
+    font-style: italic;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+    padding: 2em 3em;
+}
+
 
 
 // Chat Window
@@ -765,16 +767,21 @@ JDmainmodal {
     }
 }
 
+.default-shadowbox {
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.94) 100%);
+    box-shadow: 4px 8px 110px rgba(0, 0, 0, 0.25);
+}
+
+
 @z-index-ontop: 10;
 
 // -------------------------------
 
 // CHAT LEAD WRAPPER
 .content-chatlead-wrapper {
+    .default-shadowbox;
     padding: 4em;
     padding-bottom: 0;
-    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.94) 100%);
-    box-shadow: 4px 8px 110px rgba(0, 0, 0, 0.25);
     height: 94vh;
     margin-bottom: .5em;
 }
@@ -883,6 +890,7 @@ JDmainmodal {
 
 .messages-wrapper {
     position: relative;
+
     .nav-link {
         font-size: @lg-size;
         cursor: pointer;
@@ -911,34 +919,41 @@ JDmainmodal {
     .messages-list {
         margin-bottom: .5em;
     }
+
     .opened-message {
         background: #fff;
         display: none;
-    }  
-    .opened-message.show{
-        display: block!important;
+    }
+
+    .opened-message.show {
+        display: block !important;
         position: absolute;
         top: 0;
         z-index: 10;
     }
+
     .chat-wrapper .chat-room.small-chat .my-custom-scrollbar {
         max-height: 250px;
     }
+
     .chat-room.small-chat .my-custom-scrollbar>.card-body {
         max-height: 240px;
     }
-    #prev-message, #next-message{
+
+    #prev-message,
+    #next-message {
         font-weight: @regular-wgt;
         background: @transparent;
         border: 1px solid @green-color;
     }
-    #prev-message{
+
+    #prev-message {
         .default-border;
         background: @lighter-gray-color;
     }
 
-    .pagination{
-        .page-link{
+    .pagination {
+        .page-link {
             .default-border;
             .flex-center;
             color: @black-color;
@@ -946,55 +961,81 @@ JDmainmodal {
             border-radius: 0;
             width: 60px;
             height: 40px;
-            &.active{
+
+            &.active {
                 background: @green-color;
                 color: @white-color;
                 font-weight: @bold-wgt;
             }
         }
     }
-    
+
 }
 
 // EXTRAIR BASE
 
-.extrairbase-wrapper{
-    p{
+.extrairbase-wrapper {
+    p {
         font-size: @big-size;
     }
-    #datepicker{
-        input{
+
+    #datepicker {
+        input {
             .default-border;
             border: 1px solid @green-color;
             width: 210px;
             height: 57px;
             margin-right: 10px;
         }
-        label{
+
+        label {
             font-style: italic;
             position: relative;
             top: -25px;
             left: 20px;
             font-weight: bold;
         }
+
         [type="date"]::-webkit-inner-spin-button {
             display: none;
         }
+
         [type="date"]::-webkit-calendar-picker-indicator {
             font-size: 10px;
-        }  
+        }
     }
 
     #extrairbasedia {
         margin-left: 2em;
     }
 
-    .yellow-button{
+    .yellow-button {
         font-size: @lg-size;
         font-weight: @bold-wgt;
         height: 57px;
         max-width: 225px;
-        margin: 0; 
+        margin: 0;
     }
-    
+
+}
+
+// LOGIN PAGE
+
+.login-page-wrapper {
+    .col-md-9 {
+        .main-form-style;
+        .default-shadowbox;
+    }
+
+    .jd-main-hashtag {
+        color: @light-gray-color;
+        font-weight: @regular-wgt;
+        width: @full-width;
+        font-size: @lg-size;
+        padding: 0;
+        text-align: left;
+        text-shadow: none;
+        position: relative;
+        top: 40px;
+    }
 }
