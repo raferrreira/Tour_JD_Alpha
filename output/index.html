@@ -40,10 +40,11 @@
          /* fix for scroll bars on webkit & >=Mac OS X Lion */ 
          ::-webkit-scrollbar {
          background-color: rgba(0,0,0,0.5);
-         width: 0.75em;
+         width: 5px;
          }
          ::-webkit-scrollbar-thumb {
-         background-color:  rgba(255,255,255,0.5);
+		 background-color:  rgba(255,255,255,0.5);
+		 width: 5px;
          }
       </style>
    </head>
@@ -74,148 +75,200 @@
       <!-- Hack needed to hide the url bar on iOS 9, iPhone 5s --> 
       <div style="width:1px;height:1px;"></div>
       <div class="container-fluid main-content-jd-plataform p-0">
+
          <!-- JD HEADER -->
          <section>
             <div class="container jd-content-wrapper p-0">
                <div class="row">
                   <ul class="nav nav-pills nav-fill jd-main-navigation">
-                     <li class="nav-item">
+                     <li class="nav-item logo-section">
                         <img alt="" src="website-images/jd_logo_desktop.png" class="float-left img-fluid main-logo-jd"/>
                      </li>
                      <li class="nav-item main-jd-link d-flex align-items-center">
                         <a class="nav-link" data-toggle="modal" data-target="#ModalSpecialConditions">Condições Especiais & Financiamentos</a>
                      </li>
-                     <li class="nav-item main-jd-link d-flex align-items-center">
+                     <!-- <li class="nav-item main-jd-link d-flex align-items-center">
                         <a class="nav-link" data-toggle="modal" data-target="#ModalEventCalendar">Agenda de Eventos</a>
-                     </li>
+                     </li> -->
                      <li class="nav-item main-jd-link d-flex align-items-center" id="openJDChatWindow">
                         <a class="nav-link">Fale com Concessionário</a>
                      </li>
                      <li class="nav-item conectese-btn main-jd-link d-flex align-items-center" data-toggle="modal" data-target="#ModalConectese">
                         <a class="nav-link">Conecte-se</a>
-                     </li>
+					 </li>
+					 <button class="default-btn menu-mbl-btn pr-3"><img src="website-images/MenuMOB.png" class="img-fluid"/></button>
                   </ul>
                </div>
             </div>
-         </section>
+		 </section>
+		 
          <!-- JD BOTTOM SECTION -->
-         <section>
-            <div class="container-fluid jd-main-bottom-wrapper p-0">
-               <section class="d-flex align-items-end justify-content-between">
-                  <!-- HASHTAG -->
-                  <div class="jd-main-hashtag">
-                     <span>#JOHNDEERECONECTA</span>
-                  </div>
-                  <!-- CHAT WINDOW -->
-                  <div class="jd-main-chat-popup">
-                     <div class="d-flex flex-row-reverse">
-                        <div class="card chat-room small-chat wide slim" id="JDMainChat">
-                           <div class="card-header d-flex align-items-center justify-content-between p-2" id="toggle" style="cursor: pointer;">
-                              <div class="heading d-flex justify-content-center">
-                                 <p class="m-0">Chat Online</p>
-                              </div>
-                              <div class="icons grey-text"> 
-                                 <a id="closeButton">_</a>
-                              </div>
-                           </div>
-                           <div class="my-custom-scrollbar" id="message">
-                              <div class="card-body p-2">
-                                 <div class="chat-message">
-                                    <div class="jd-alert card w-100">
-                                       <div class="card-body p-3 alert-text">
-                                          <p class="card-text">
-                                             <b id="user_name">John Deere Conecta:</b><br/>
-                                             Para falar com um de nossos concessionários faça seu cadastro John Deere Conecta clicando no botão abaixo
-                                          </p>
-                                       </div>
-                                       <div class="card-body p-0">
-                                          <button class="cadastrese-btn" data-toggle="modal" data-target="#ModalConectese">Cadastrar-se</button>
-                                       </div>
-                                    </div>
-                                    <div class="jd-message card z-depth-0 mb-1 message-text m-0 float-left">
-                                       <div class="card-body p-2">
-                                          <p class="card-text">
-                                             <b id="user_name">Concessionário:</b><br/>
-                                             Nostrum minima cupiditate assumenda, atque cumque hic voluptatibus at corporis maxime quam harum.
-                                          </p>
-                                       </div>
-                                    </div>
-                                    <div class="user-message card float-right z-depth-0 mb-2">
-                                       <div class="card-body p-2">
-                                          <p class="card-text">
-                                             <b id="user_name">Visitante:</b><br/>
-                                             Rem suscipit lorum repellendus ditiis?
-                                          </p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="card-footer text-muted chat-bottom-section">
-                              <textarea type="text" id="write-message" class="form-control" placeholder="Escreva aqui sua mensagem"> </textarea>
-                              <button class="send-message-btn disabled" id="send-message">Enviar</button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </section>
-               <!-- FOOTER -->
-               <section class="footer-wrapper">
-                  <div class="row">
-                     <footer class="jd-main-footer w-100 d-flex align-items-center justify-content-between">
-                        <ul class="nav nav-pills nav-fill jd-main-oottom-navigation">
-                           <li class="nav-item small-jd-link">
-                              <a class="nav-link" href="#">Privacidade e Dados</a>
-                           </li>
-                           <li class="nav-item small-jd-link">
-                              <a class="nav-link" href="#">Política de Cookies</a>
-                           </li>
-                           <li class="nav-item small-jd-link">
-                              <a class="nav-link" href="#">Fale Conosco</a>
-                           </li>
-                           <li class="nav-item small-jd-link">
-                              <a class="nav-link " href="#">Aviso Legal</a>
-                           </li>
-                        </ul>
-                        <small class="copyrights">Copyright © 2020 Deere & Company. Todos os direitos reservados</small>
-                     </footer>
-                  </div>
-               </section>
-            </div>
-         </section>
-         <!---------------------------MODALS----------------------------->
+		<div class="container-fluid jd-main-bottom-wrapper p-0">
+			<!-- HASHTAG -->
+			<div class="jd-main-hashtag">
+				<span>#JOHNDEERECONECTA</span>
+			</div>
+			<!-- CHAT WINDOW -->
+			<div class="card chat-room small-chat wide slim" id="JDMainChat">
+				<div class="card-header d-flex align-items-center justify-content-between p-2" id="toggle" style="cursor: pointer;">
+					<div class="heading d-flex justify-content-center">
+						<p class="m-0">Chat Online</p>
+					</div>
+					<div class="icons grey-text"> 
+						<a id="closeButton">_
+							<img src="website-images/arrow-left-white.png" class="img-fluid mobile-img"/>
+						</a>
+					</div>
+				</div>
+				<div class="my-custom-scrollbar" id="message">
+					<div class="card-body p-2">
+						<div class="chat-message">
+						<div class="jd-alert card w-100">
+							<div class="card-body p-3 alert-text">
+								<p class="card-text">
+									<b id="user_name">John Deere Conecta:</b><br/>
+									Para falar com um de nossos concessionários faça seu cadastro John Deere Conecta clicando no botão abaixo
+								</p>
+							</div>
+							<div class="card-body p-0">
+								<button class="cadastrese-btn" data-toggle="modal" data-target="#ModalConectese">Cadastrar-se</button>
+							</div>
+						</div>
+						<div class="jd-message card z-depth-0 mb-1 message-text m-0 float-left">
+							<div class="card-body p-2">
+								<p class="card-text">
+									<b id="user_name">Concessionário:</b><br/>
+									Nostrum minima cupiditate assumenda, atque cumque hic voluptatibus at corporis maxime quam harum.
+								</p>
+							</div>
+						</div>
+						<div class="user-message card float-right z-depth-0 mb-2">
+							<div class="card-body p-2">
+								<p class="card-text">
+									<b id="user_name">Visitante:</b><br/>
+									Rem suscipit lorum repellendus ditiis?
+								</p>
+							</div>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-footer text-muted chat-bottom-section">
+					<textarea type="text" id="write-message" class="form-control" placeholder="Escreva aqui sua mensagem"> </textarea>
+					<button class="send-message-btn disabled" id="send-message">Enviar</button>
+				</div>
+			</div> 
+			<!-- FOOTER -->
+			<section class="footer-wrapper">
+				<div class="row">
+					<footer class="jd-main-footer w-100 d-flex align-items-center justify-content-between">
+					<ul class="nav nav-pills nav-fill jd-main-oottom-navigation">
+						<li class="nav-item small-jd-link">
+							<a class="nav-link" href="https://www.deere.com.br/pt/privacidade-e-dados/">Privacidade e Dados</a>
+						</li>
+						<li class="nav-item small-jd-link">
+							<a class="nav-link" href="https://www.deere.com.br/pt/privacidade-e-dados/pol%C3%ADtica-de-cookies/">Política de Cookies</a>
+						</li>
+						<li class="nav-item small-jd-link">
+							<a class="nav-link" href="https://www.deere.com.br/pt/a-nossa-empresa/contato/">Fale Conosco</a>
+						</li>
+						<li class="nav-item small-jd-link">
+							<a class="nav-link " href="https://www.deere.com.br/pt/privacidade-e-dados/aviso-legal/">Aviso Legal</a>
+						</li>
+					</ul>
+					<small class="copyrights">Copyright © 2020 Deere & Company. Todos os direitos reservados</small>
+					</footer>
+				</div>
+			</section>
+		</div>
+		 
+		<!-- Main Mobile Nav -->
+		<div class="container-fluid jd-main-mbl-nav fade p-0">
+			<ul class="nav nav-pills flex-column nav-fill jd-main-navigation"> 
+				<div class="back-btn px-4 d-flex align-items-center">
+					<p class="d-flex align-items-center m-0"> <img src="website-images/arrow-left.png"class="img-fluid mr-3"/> Voltar</p>
+				</div>
+				<img src='website-images/jdconecta.png' class="img-fluid w-100">
+				<li class="nav-item main-jd-link d-flex align-items-center">
+					<a class="nav-link" data-toggle="modal" data-target="#ModalSpecialConditions">
+						<img src="website-images/condicoes.png" class="img-fluid mr-2"/> Condições Especiais & Financiamentos</a>
+				</li>
+				<!-- <li class="nav-item main-jd-link d-flex align-items-center">
+					<a class="nav-link" data-toggle="modal" data-target="#ModalEventCalendar">
+						<img src="website-images/agenda de eventos.png"class="img-fluid mr-2"/> Agenda de Eventos</a>
+				</li> -->
+				<li class="nav-item main-jd-link d-flex align-items-center">
+					<a class="nav-link"  id="openJDChatWindowMbl">
+						<img src="website-images/falecc.png"class="img-fluid mr-2"/> Fale com Concessionário</a>
+				</li>
+				<li class="nav-item conectese-btn main-jd-link d-flex align-items-center">
+					<a class="nav-link" data-toggle="modal" data-target="#ModalConectese"> 
+						<img src="website-images/conectese.png"class="img-fluid mr-2"/> Conecte-se</a>
+				</li>
+				</ul>
+				<footer class="jd-main-footer w-100 d-flex align-items-center flex-column">
+				<ul class="nav nav-pills nav-fill jd-main-bottom-navigation">
+					<li class="nav-item small-jd-link">
+						<a class="nav-link" href="https://www.deere.com.br/pt/privacidade-e-dados/">Privacidade e Dados</a>
+					</li>
+					<li class="nav-item small-jd-link">
+						<a class="nav-link" href="https://www.deere.com.br/pt/privacidade-e-dados/pol%C3%ADtica-de-cookies/">Política de Cookies</a>
+					</li>
+					<li class="nav-item small-jd-link">
+						<a class="nav-link" href="https://www.deere.com.br/pt/a-nossa-empresa/contato/">Fale Conosco</a>
+					</li>
+					<li class="nav-item small-jd-link">
+						<a class="nav-link " href="https://www.deere.com.br/pt/privacidade-e-dados/aviso-legal/">Aviso Legal</a>
+					</li>
+				</ul>
+				<small class="copyrights">Copyright © 2020 Deere & Company. Todos os direitos reservados</small>
+				</footer>
+		</div>
+
+		 <!---------------------------MODALS----------------------------->
+		 
          <!-- Condições Especiais e Financiamentos -->
          <JDmainmodal class="modal fade p-0 " id="ModalSpecialConditions" tabindex="-1" role="dialog" aria-labelledby="ModalSpecialConditions" aria-hidden="true">
             <div class="container p-0">
-               <img alt=""src="website-images/fa-close-btn.png" type="button" class="close" data-dismiss="modal" aria-label="Fechar"/>
+               <img alt="" src="website-images/fa-close-btn.png" type="button" class="close dsktp-img" data-dismiss="modal" aria-label="Fechar"/>
                <div class="modal-dialog" role="document">
                   <div class="modal-content p-0">
+					<div class="modal-header mobile-img">
+						<h5 class="modal-title">Condições Especiais de Financiamento</h5>
+						<button type="button default-btn" class="close" data-dismiss="modal" aria-label="Fechar">
+							<img alt=""src="website-images/fa-close-btn.png"/>
+						</button>
+					</div>
                      <div class="modal-body d-flex align-items-center justify-content-center p-0">
                         <div class="col-md-4 col-lg-4 p-0 image-block-conditions">
                            <a href="" target="_blank">
                               <h2 style="bottom: 4%;"><span>BANCO</span><br/>JOHN<br/>DEERE</h2>
-                              <img alt="" class="img-fluid" src="website-images/bancoimg.PNG"/>
+							  <img alt="" class="img-fluid dsktp-img" src="website-images/bancoimg.PNG"/>
+							  <img alt="" class="img-fluid mobile-img" src="website-images/bancoimgmobile.PNG"/>
                            </a>
                         </div>
                         <div class="col-md-4 col-lg-4 p-0 image-block-conditions">
                            <a href="" target="_blank">
                               <h2><span>CONSÓRCIO</span><br/>JOHN DEERE</h2>
-                              <img alt="" class="img-fluid" src="website-images/consorcioimg.PNG"/>
+							  <img alt="" class="img-fluid dsktp-img" src="website-images/consorcioimg.PNG"/>
+							  <img alt="" class="img-fluid mobile-img" src="website-images/consorcioimgmobile.PNG"/>
                            </a>
                         </div>
                         <div class="col-md-4 col-lg-4 p-0 image-block-conditions">
                            <a href="" target="_blank">
                               <h2><span>CUPONS DE</span><br/>DESCONTOS</h2>
-                              <img alt="" class="img-fluid" src="website-images/cupomimg.PNG"/>
+							  <img alt="" class="img-fluid dsktp-img" src="website-images/cupomimg.PNG"/>
+							  <img alt="" class="img-fluid mobile-img" src="website-images/cupomimgmobile.PNG"/>
                            </a>
                         </div>
                      </div>
                   </div>
                </div>
             </div>
-         </JDmainmodal>
+		 </JDmainmodal>
+		 
          <!-- Agenda de Eventos -->
-         <JDmainmodal class="modal fade p-0 " id="ModalEventCalendar" tabindex="-1" role="dialog" aria-labelledby="ModalEventCalendar" aria-hidden="true">
+         <!-- <JDmainmodal class="modal fade p-0 " id="ModalEventCalendar" tabindex="-1" role="dialog" aria-labelledby="ModalEventCalendar" aria-hidden="true">
             <div class="container p-0">
                <img alt="" src="website-images/fa-close-btn.png" type="button" class="close close-btn" data-dismiss="modal" aria-label="Fechar"/>
                <div class="modal-dialog" role="document">
@@ -281,13 +334,20 @@
                   </div>
                </div>
             </div>
-         </JDmainmodal>
-         <!-- Modal Conecte-se -->
+         </JDmainmodal> -->
+		 
+		 <!-- Modal Conecte-se -->
          <JDmainmodal class="modal fade p-0 " id="ModalConectese" tabindex="-1" role="dialog" aria-labelledby="ModalConectese" aria-hidden="true">
             <div class="container p-0">
-               <img alt=""src="website-images/fa-close-btn.png" type="button" class="close" data-dismiss="modal" aria-label="Fechar"/>
+               <img alt=""src="website-images/fa-close-btn.png" type="button" class="close dsktp-img" data-dismiss="modal" aria-label="Fechar"/>
                <div class="modal-dialog" role="document">
                   <div class="modal-content">
+					<div class="modal-header mobile-img">
+						<h5 class="modal-title">Bem vindo à <br> John Deere Conecta</h5>
+						<button type="button default-btn" class="close" data-dismiss="modal" aria-label="Fechar">
+							<img alt=""src="website-images/fa-close-btn.png"/>
+						</button>
+					</div>
                      <div class="max-height-scrolling">
                         <div class="modal-body scrolling-max-height  d-flex justify-content-between p-0">
                            <div class="col-lg-6 login-form">
@@ -323,7 +383,7 @@
                                     </div>
                                     <button class="btn send-form-btn" data-toggle="modal" data-target="#ModalConcessionariosProximos">Conectar</button>
                                  </form>
-                                 <div class="login-with-socialnetwork">
+                                 <!-- <div class="login-with-socialnetwork">
                                     <p class="subtitle fancy"><span>ou entre com</span></p>
                                     <button class="default-btn">
                                     <img src="website-images/facebook-btn.PNG" class="img-fluid"/>
@@ -331,7 +391,7 @@
                                     <button class="default-btn">
                                     <img src="website-images/google-btn.PNG" class="img-fluid"/>
                                     </button>
-                                 </div>
+                                 </div> -->
                               </div>
                            </div>
                            <div class="col-lg-6 cadastro-form d-table">
@@ -362,6 +422,17 @@
                                        Por favor, digite uma senha válida.
                                     </div>
                                  </div>
+								 <!-- Confirmar Senha -->
+								 <div class="col-md-12 mb-2 p-0">
+                                    <label for="validationPasswordConfirm">Confirmar Senha*</label>
+                                    <input type="password" class="form-control" id="validationPasswordConfirm" placeholder="*********" value="" required>
+                                    <div class="valid-feedback">
+                                       Tudo certo!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                       As duas senhas não coincidem.
+                                    </div>
+                                 </div>
                                  <!-- Nome -->
                                  <div class="col-md-12 mb-2 p-0">
                                     <label for="validationName">Nome*</label>
@@ -372,11 +443,6 @@
                                     <div class="invalid-feedback">
                                        Por favor, digite o seu nome.
                                     </div>
-                                 </div>
-                                 <!-- CEP -->
-                                 <div class="col-md-12 mb-2 p-0">
-                                    <label for="validationName">CEP</label>
-                                    <input type="CEP" class="form-control" id="validationName" placeholder="XXXXX-XXX" value=""> 
                                  </div>
                                  <!-- Telefone -->
                                  <div class="col-md-12 mb-4 p-0">
@@ -414,12 +480,19 @@
                   </div>
                </div>
             </div>
-         </JDmainmodal>
+		 </JDmainmodal>
+		 
          <!-- Modal Concessionários mais próximos -->
          <JDmainmodal class="modal fade p-0 " id="ModalConcessionariosProximos" tabindex="-1" role="dialog" aria-labelledby="ModalConcessionariosProximos" aria-hidden="true">
             <div class="container p-0">
                <div class="modal-dialog" role="document">
                   <div class="modal-content">
+					<div class="modal-header mobile-img mb-3">
+						<h5 class="modal-title text-left">Escolha seu<br> Concessionário</h5>
+						<button type="button default-btn" class="close" data-dismiss="modal" aria-label="Fechar" style="top:0">
+							<img alt=""src="website-images/fa-close-btn.png"/>
+						</button>
+					</div>
                      <div class="max-height-scrolling p-5">
                         <div class="modal-body scrolling-max-height p-5 d-flex justify-content-center align-items-center p-0">
                            <div class="col-lg-10 ConcessionariosProximos-form">
@@ -451,13 +524,17 @@
                   </div>
                </div>
             </div>
-         </JDmainmodal>
-      </div>
+		 </JDmainmodal>
+		 
+	  </div>
+	  
       <!-- Bootstrap 4.4 CDN -->
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-      <!-- MAIN JS -->
-      <script src="js/main.min.js"></script>
+	  
+	  <!-- MAIN JS -->
+	  <script src="js/main.min.js"></script>
+	  
    </body>
 </html>

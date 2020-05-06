@@ -19,8 +19,10 @@ $("#toggle").on('click', function () {
  
 // Open chat - Fale com Concessionário
 $("#openJDChatWindow").click(function(){
-    $JDMainChat.toggleClass('slim');
+    $JDMainChat.addClass('slim');
 });
+ 
+
 
 // Form Validation
 (function() {
@@ -50,7 +52,15 @@ $('button[data-toggle="modal"]').on('click', function () {
     };
 });
 
+$('button[data-toggle="modal"]').on('click', function () {
 
+  if ($JDMainModal.hasClass('show') || !$JDMainModal.is(':hidden')) {
+      $JDMainModal.css('display', 'none');
+      $JDMainModal.removeClass('show');
+  };
+});
+
+// Visualizar mensagem na pagina de chat leads
 const $JDmessagebutton = $('.opened-message');
 
 $('a[aria-controls="pills-messages"]').on('click', function () {
@@ -60,9 +70,34 @@ $('a[aria-controls="pills-messages"]').on('click', function () {
     };
 });
 
-
 $('button[href="#pills-message"]').on('click', function () {
       $JDmessagebutton.addClass('show');
+});
+
+// menu mobile 
+const $JDMobileNav = $('.jd-main-mbl-nav');
+
+$('.menu-mbl-btn').on('click', function () { 
+      $JDMobileNav.addClass('show'); 
+}); 
+
+$('.back-btn').on('click', function () { 
+  $JDMobileNav.removeClass('show'); 
+});
+
+$('.nav-link[data-toggle="modal"]').on('click', function () {
+
+  if ($JDMobileNav.hasClass('show')) {
+      $JDMobileNav.removeClass('show');
+  };
+});
+
+
+$("#openJDChatWindowMbl").click(function(){
+  $("#JDMainChat").removeClass("slim");
+  if ($JDMobileNav.hasClass('show')) {
+    $JDMobileNav.removeClass('show');
+  };
 });
 
 // slider

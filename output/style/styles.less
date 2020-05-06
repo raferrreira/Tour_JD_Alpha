@@ -33,6 +33,10 @@ body {
     font-family: JDff Roman, sans-serif;
 }
 
+.jd-main-mbl-nav {
+    display: none;
+}
+
 // default body layer
 .main-content-jd-plataform {
     position: absolute;
@@ -149,6 +153,36 @@ body {
     line-height: 130%;
 }
 
+
+.pill-button {
+    border: 1px solid @green-color;
+    color: @green-color;
+    font-size: @lg-size;
+    font-weight: @bold-wgt;
+    width: @full-width;
+    height: 35px;
+    text-align: center;
+    padding: 0 6em;
+}
+
+.green-link {
+    color: @green-color;
+    font-size: @lg-size;
+}
+
+.chat-message-home-header {
+    .flex-between;
+    background: @lighter-gray-color;
+    border: 1px solid @light-gray-color;
+    min-height: 175px;
+
+    p {
+        margin: 0;
+        color: @black-color;
+    }
+}
+
+
 // Main Modals
 
 .JDmainmodal {
@@ -233,12 +267,12 @@ body {
     }
 
     .fancy span:before {
-        right: 100%;
+        right: @full-width;
         margin-right: 15px;
     }
 
     .fancy span:after {
-        left: 100%;
+        left: @full-width;
         margin-left: 15px;
     }
 }
@@ -309,6 +343,11 @@ body {
     font-size: @lg-size;
 }
 
+.default-shadowbox {
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.94) @full-width);
+    box-shadow: 4px 8px 110px rgba(0, 0, 0, 0.25);
+}
+
 // FlexBox
 
 .flex-column {
@@ -327,7 +366,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+    height: @full-width;
 }
 
 .flex-centered-between {
@@ -339,6 +378,14 @@ body {
 // Main Principal Page Style -------------------------------------
 
 // NavBar 
+
+.main-content-jd-plataform {
+    .main-logo-jd {
+        max-width: @desktop-logo-size;
+        height: 70px;
+    }
+}
+
 .jd-main-navigation {
     .main-nav-styles;
     background: @white-color;
@@ -353,6 +400,12 @@ body {
         width: @full-width;
         text-align: @center;
         cursor: pointer;
+        transition: .5s;
+
+        &:hover {
+            color: @green-color;
+            transition: .5s;
+        }
     }
 
     .conectese-btn {
@@ -369,7 +422,8 @@ body {
 
     .footer-wrapper {
         background: @white-color;
-        padding: 8px 2em;
+        padding: 3px 2em;
+        height: 40px;
 
         .small-jd-link a {
             font-size: @md-size;
@@ -390,15 +444,24 @@ body {
     color: @white-color;
     font-style: italic;
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
-    padding: 2em 3em;
+    width: auto;
+    display: table;
+    margin: 0;
+    position: fixed;
+    bottom: 5em;
+    left: 4em;
 }
 
 
 
 // Chat Window
 
-.jd-main-chat-popup {
-    padding-right: 2em;
+.chat-room {
+    .default-border;
+
+    .my-custom-scrollbar {
+        .default-border !important;
+    }
 
     .card {
         .default-border;
@@ -422,6 +485,11 @@ body {
             background-color: @green-color;
             line-height: 130%;
         }
+    }
+
+    textarea {
+        margin: 0;
+        width: @full-width  !important;
     }
 
     .cadastrese-btn {
@@ -512,7 +580,7 @@ JDmainmodal {
         width: @full-width;
         position: relative;
         display: table;
-        height: 100%;
+        height: @full-width;
 
         h2 {
             width: @full-width;
@@ -527,7 +595,7 @@ JDmainmodal {
             transform: translate(-50%, -50%);
             text-align: center;
             margin: 0;
-            line-height: 100%;
+            line-height: @full-width;
 
             span {
                 color: @white-color;
@@ -549,7 +617,7 @@ JDmainmodal {
             background: @transparent;
             color: @gray-color;
             font-size: @big-size;
-            font-weight: @bold-wgt;
+            font-weight: @black-wgt;
             padding: 0;
         }
 
@@ -567,12 +635,12 @@ JDmainmodal {
 
             .month {
                 font-size: @big-size + 2;
-                line-height: 100%;
+                line-height: @full-width;
             }
 
             .day {
                 font-size: @big-size + 24;
-                line-height: 100%;
+                line-height: @full-width;
             }
         }
 
@@ -624,8 +692,8 @@ JDmainmodal {
     .main-modal-style;
 
     .modal-dialog {
-        max-width: 75%;
-        width: 75%;
+        max-width: @75-width;
+        width: @75-width;
 
         .modal-content {
             .max-height-scrolling {
@@ -683,7 +751,7 @@ JDmainmodal {
             .cadastro-form {
                 padding: 2.125em;
                 border-left: 1px solid @light-gray-color;
-                height: 100%;
+                height: @full-width;
             }
         }
     }
@@ -736,46 +804,6 @@ JDmainmodal {
 }
 
 // CHAT LEADS
-
-// MIXINS ------------------------
-
-.pill-button {
-    border: 1px solid @green-color;
-    color: @green-color;
-    font-size: @lg-size;
-    font-weight: @bold-wgt;
-    width: @full-width;
-    height: 35px;
-    text-align: center;
-    padding: 0 6em;
-}
-
-.green-link {
-    color: @green-color;
-    font-size: @lg-size;
-}
-
-.chat-message-home-header {
-    .flex-between;
-    background: @lighter-gray-color;
-    border: 1px solid @light-gray-color;
-    min-height: 175px;
-
-    p {
-        margin: 0;
-        color: @black-color;
-    }
-}
-
-.default-shadowbox {
-    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.94) 100%);
-    box-shadow: 4px 8px 110px rgba(0, 0, 0, 0.25);
-}
-
-
-@z-index-ontop: 10;
-
-// -------------------------------
 
 // CHAT LEAD WRAPPER
 .content-chatlead-wrapper {
@@ -843,7 +871,37 @@ JDmainmodal {
     }
 }
 
-.chat-wrapper {
+
+#pills-chat,
+#pills-message {
+    .chat-room {
+        position: inherit;
+    }
+
+    .chat-message-home-wrapper {
+        .default-border;
+        width: @full-width;
+        max-width: @full-width;
+    }
+}
+
+.chat-leads-jd-plataform {
+    .chat-room {
+        .my-custom-scrollbar {
+            margin-top: 1em;
+            height: 250px !important;
+            border: 1px solid @light-gray-color  !important;
+            margin-bottom: 1em;
+        }
+    }
+}
+
+.chat-room {
+    width: 365px;
+    position: fixed;
+    bottom: 40px;
+    right: 2em;
+
     .chat-message-home-head {
         .chat-message-home-header;
 
@@ -852,13 +910,8 @@ JDmainmodal {
         }
     }
 
-    .chat-room.small-chat .my-custom-scrollbar {
-        height: 250px;
-        border: 1px solid @light-gray-color;
-        margin-bottom: 1em;
-    }
 
-    .chat-room.small-chat .my-custom-scrollbar>.card-body {
+    .my-custom-scrollbar>.card-body {
         max-height: 240px;
     }
 
@@ -1038,4 +1091,365 @@ JDmainmodal {
         position: relative;
         top: 40px;
     }
+}
+
+
+.mobile-img {
+    display: none;
+}
+
+.dsktp-img {
+    display: block;
+}
+
+// Responsive -----------------------------------
+.menu-mbl-btn {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .img-fluid.main-logo-jd {
+        max-width: 200px;
+    }
+
+    .nav-fill .nav-item {
+        flex: auto !important;
+    }
+
+    .jd-main-navigation .main-jd-link a {
+        padding: 0;
+    }
+
+    #ModalSpecialConditions a h2 {
+        font-size: 35px;
+    }
+
+    JDmainmodal .close {
+        right: 3em;
+    }
+
+    #ModalEventCalendar .close-btn {
+        right: 8.5em;
+    }
+}
+
+@media screen and (max-width:991px) {
+    .jd-main-navigation .main-jd-link a {
+        padding: .5rem 1rem;
+    }
+
+    .chat-room.small-chat.slim {
+        display: none !important;
+    }
+
+    .chat-room.small-chat {
+        width: @full-width  !important;
+        bottom: inherit;
+        right: 0;
+        height: 93%;
+        display: block !important;
+        top: 55px;
+
+        .card-footer {
+            position: absolute;
+            bottom: 0;
+            width: @full-width;
+            background: #fff;
+
+            .send-message-btn {
+                margin-bottom: 10px;
+            }
+        }
+
+        #closeButton {
+            font-size: 0;
+        }
+
+        #closeButton img {
+            position: relative;
+            top: -15px;
+            right: 10px;
+        }
+    }
+
+
+    .chat-room.small-chat .my-custom-scrollbar {
+        padding-bottom: 5em !important;
+    }
+
+    .jd-content-wrapper {
+        width: @full-width;
+        max-width: @full-width;
+        margin: 0;
+
+        .nav-item {
+            display: none !important;
+        }
+
+        .logo-section {
+            display: block !important;
+        }
+
+        .menu-mbl-btn {
+            display: block;
+        }
+
+        .jd-main-navigation {
+            height: 55px;
+
+            .main-logo-jd {
+                height: 55px;
+            }
+        }
+    }
+
+    .jd-main-hashtag,
+    .footer-wrapper,
+    .jd-main-chat-popup {
+        display: none;
+    }
+
+    .jd-main-mbl-nav {
+        display: none;
+    }
+
+    .jd-main-mbl-nav.show {
+        display: block;
+        background: @white-color;
+        width: @85-width;
+        .flex-between;
+        position: absolute;
+        top: 0;
+        z-index: 99999;
+        right: 0;
+        overflow: scroll;
+        overflow-x: hidden;
+
+        .main-jd-link {
+            text-align: @left;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            border-bottom: 1px solid @light-gray-color;
+
+            a {
+                text-align: @left;
+                font-weight: @regular-wgt;
+                color: @gray-color;
+                font-size: @lg-size + 2;
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .jd-main-footer {
+            padding-bottom: 2em;
+            margin-top: 2em;
+
+            a {
+                color: @gray-color;
+            }
+
+            .copyrights {
+                padding: 10px;
+                text-align: center;
+            }
+        }
+
+        .back-btn {
+            background: @white-color;
+            font-size: @lg-size + 2;
+            color: @green-color;
+            font-weight: @bold-wgt;
+            border-bottom: 1px solid @green-color;
+            width: @full-width;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            height: 55px;
+        }
+    }
+
+
+    .max-height-scrolling {
+        min-height: @full-width  !important;
+        max-height: @full-width  !important;
+        height: @full-width  !important;
+    }
+
+    .scrolling-max-height {
+        min-height: @full-width  !important;
+        max-height: @full-width  !important;
+        height: @full-width  !important;
+        padding: 0 !important;
+        padding-bottom: 5em !important;
+
+    }
+
+    JDmainmodal {
+        transform: inherit !important;
+        overflow: auto !important;
+        overflow-x: hidden;
+        top: 55px !important;
+        background: #00000054;
+
+        .container,
+        .modal-dialog {
+            width: @full-width;
+            max-width: @full-width;
+            margin: 0;
+        }
+
+        .modal-header {
+            height: auto;
+            .default-border;
+            background: @green-color;
+
+            h5 {
+                font-size: @big-size;
+                font-weight: @regular-wgt;
+                color: @white-color;
+                width: 70%;
+            }
+        }
+
+        .close {
+            right: 40px;
+            top: 17px;
+
+            img {
+                width: 20px;
+            }
+        }
+
+
+    }
+
+    #ModalSpecialConditions {
+        overflow: auto !important;
+        padding-bottom: 8em !important;
+
+        .modal-body {
+            flex-direction: column;
+
+            .dsktp-img,
+            h2 {
+                display: none;
+            }
+        }
+    }
+
+    .mobile-img {
+        display: block;
+    }
+
+    .dsktp-img {
+        display: none;
+    }
+
+    .modal-backdrop.fade.show {
+        display: none;
+    }
+
+    #ModalEventCalendar {
+        transform: inherit;
+
+        .modal-dialog {
+            width: @full-width;
+
+            .modal-header {
+                height: auto;
+
+                .modal-title {
+                    width: 70%;
+                }
+            }
+
+            .nav-pills {
+                padding: 1em !important;
+            }
+
+            .event-stuff-wrapper {
+                .event-date {
+                    width: 50%;
+                }
+
+                .event-signup {
+                    width: 60%;
+                    padding-right: 8px !important;
+                }
+
+                .event-infos .event-name {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .close-btn {
+            right: 10px;
+            top: 27px;
+        }
+
+        li.nav-item.pr-5 {
+            padding-right: 20px !important;
+        }
+    }
+
+    #ModalConectese,
+    #ModalConcessionariosProximos {
+        transform: inherit;
+
+        .modal-dialog {
+            width: @full-width;
+            max-width: @full-width;
+
+            .modal-header {
+                height: auto;
+            }
+
+            .modal-body {
+                flex-direction: column;
+            }
+
+            .login-with-socialnetwork {
+                .flex-column;
+                margin-top: 13%;
+            }
+        }
+
+        .JD-Main-State-Form.px-5 {
+            padding: 0 !important;
+        }
+
+        .ConcessionariosProximos-form {
+            form.needs-validation.px-4 {
+                padding: 0 !important;
+            }
+        }
+
+        .max-height-scrolling {
+            padding: 0 !important;
+        }
+    }
+
+    #ModalConcessionariosProximos {
+        .modal-content {
+            button {
+                height: auto;
+                min-height: 43px;
+            }
+
+            h4 br {
+                display: none;
+            }
+        }
+    }
+}
+
+.mobile-img {
+    width: @full-width;
+    max-width: @full-width;
+}
+
+.image-block-conditions {
+    max-width: @full-width;
 }

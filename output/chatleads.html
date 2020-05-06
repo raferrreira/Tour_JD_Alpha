@@ -44,10 +44,11 @@
          /* fix for scroll bars on webkit & >=Mac OS X Lion */ 
          ::-webkit-scrollbar {
          background-color: rgba(0,0,0,0.5);
-         width: 0.75em;
+		 width: 5px;
          }
          ::-webkit-scrollbar-thumb {
-         background-color:  rgba(255,255,255,0.5);
+		 background-color:  rgba(255,255,255,0.5);
+		 width: 5px;
          }
       </style>
    </head>
@@ -120,7 +121,7 @@
                      <!-- CHAT -->
                      <div class="tab-pane fade" id="pills-chat" role="tabpanel" aria-labelledby="pills-chat-tab">
                         <div class="col-lg-12 chat-wrapper p-0 mt-4">
-                           <div class="jd-alert w-100">
+                           <div class="jd-alert w-100 chat-message-home-wrapper">
                               <div class="chat-message-home-head p-3">
                                  <div class="message-infos">
                                     <p><b>Nome:</b> João Silva</p>
@@ -224,7 +225,7 @@
                                  </nav>
                                  <!-- MENSAGEM ABERTA -->
                                  <div class="col-lg-12  opened-message chat-wrapper tab-pane fade p-0" id="pills-message" role="tabpanel" aria-labelledby="pills-message-tab">
-                                    <div class="jd-alert w-100">
+                                    <div class="jd-alert chat-message-home-wrapper w-100">
                                        <div class="chat-message-home-head p-3">
                                           <div class="message-infos">
                                              <p><b>Nome:</b> João Silva</p>
