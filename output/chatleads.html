@@ -20,15 +20,17 @@
       <meta name="apple-mobile-web-app-status-bar-style" content="black" />
       <meta name="mobile-web-app-capable" content="yes" />
       <!-- Bootstrap 4.4 CDN -->
+	  <script src="js/owl.carousel.js"></script>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	  <!-- owl carousel -->
+	  <link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css">
+	  <link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css">
       <!-- STYLE -->
       <link rel="stylesheet/less" type="text/css" href="style/styles.less" />
-      <link rel="stylesheet" type="text/css" href="style/chat-window.min.css" />
-      <!-- OWL CAROUSEL 2 -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-      <!-- OWL CAROUSEL 2 -->
-      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-      <!-- LESS 3.9 -->
+	  <link rel="stylesheet" type="text/css" href="style/chat-window.min.css" />
+	  
+
+	  <!-- LESS 3.9 -->
       <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
       <style type="text/css" title="Default">
          /* fullscreen */
@@ -93,8 +95,68 @@
                            <p class="defaulttext">Você tem <span id="unreademailnumber">2</span> mensagens de e-mail não lidas, <a href="" class="green-link">acessar</a>.</p>
                            <div class="chat-messages-slider">
                               <p class="defaulttext">Chat Online. Responda as mensagens agora e não perca negócios.</p>
-                              <div class="chat-messages-slider-wrapper mt-5">
-                                 <div class="chat-message-home-wrapper col-lg-4 pl-0">
+                              <div class="chat-messages-slider-wrapper mt-5 owl-carousel owl-theme col-md-11">
+                                 <div class="chat-message-home-wrapper pl-0">
+                                    <div class="child--chat-message-home-wrapper">
+                                       <div class="chat-message-home-head p-3">
+                                          <div class="message-infos">
+                                             <p><b>Nome:</b> João Silva</p>
+                                             <p><b>E-mail:</b> joao@email.com</p>
+                                             <p><b>Telefone:</b> 21 99999-0000</p>
+                                             <p><b>CEP:</b> 00000-000</p>
+                                          </div>
+                                          <small>Mensagem enviada 24/04/2020 às 14h20</small>
+                                       </div>
+                                       <div class="chat-message-home-body p-3">
+                                          <div class="message-text">
+                                             <p><b>Mensagem:<br></b></p>
+                                             <p>Olá, gostaria de obter informações sobre valores do trator 5E</p>
+                                          </div>
+                                       </div>
+                                       <button class="yellow-button">Responder</button>
+                                    </div>
+								 </div>
+								 <div class="chat-message-home-wrapper pl-0">
+                                    <div class="child--chat-message-home-wrapper">
+                                       <div class="chat-message-home-head p-3">
+                                          <div class="message-infos">
+                                             <p><b>Nome:</b> João Silva</p>
+                                             <p><b>E-mail:</b> joao@email.com</p>
+                                             <p><b>Telefone:</b> 21 99999-0000</p>
+                                             <p><b>CEP:</b> 00000-000</p>
+                                          </div>
+                                          <small>Mensagem enviada 24/04/2020 às 14h20</small>
+                                       </div>
+                                       <div class="chat-message-home-body p-3">
+                                          <div class="message-text">
+                                             <p><b>Mensagem:<br></b></p>
+                                             <p>Olá, gostaria de obter informações sobre valores do trator 5E</p>
+                                          </div>
+                                       </div>
+                                       <button class="yellow-button">Responder</button>
+                                    </div>
+								 </div>
+								 <div class="chat-message-home-wrapper pl-0">
+                                    <div class="child--chat-message-home-wrapper">
+                                       <div class="chat-message-home-head p-3">
+                                          <div class="message-infos">
+                                             <p><b>Nome:</b> João Silva</p>
+                                             <p><b>E-mail:</b> joao@email.com</p>
+                                             <p><b>Telefone:</b> 21 99999-0000</p>
+                                             <p><b>CEP:</b> 00000-000</p>
+                                          </div>
+                                          <small>Mensagem enviada 24/04/2020 às 14h20</small>
+                                       </div>
+                                       <div class="chat-message-home-body p-3">
+                                          <div class="message-text">
+                                             <p><b>Mensagem:<br></b></p>
+                                             <p>Olá, gostaria de obter informações sobre valores do trator 5E</p>
+                                          </div>
+                                       </div>
+                                       <button class="yellow-button">Responder</button>
+                                    </div>
+								 </div>
+								 <div class="chat-message-home-wrapper pl-0">
                                     <div class="child--chat-message-home-wrapper">
                                        <div class="chat-message-home-head p-3">
                                           <div class="message-infos">
@@ -117,7 +179,8 @@
                               </div>
                            </div>
                         </div>
-                     </div>
+					 </div>
+					 
                      <!-- CHAT -->
                      <div class="tab-pane fade" id="pills-chat" role="tabpanel" aria-labelledby="pills-chat-tab">
                         <div class="col-lg-12 chat-wrapper p-0 mt-4">
@@ -346,6 +409,32 @@
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
       <!-- MAIN JS -->
-      <script src="js/main.min.js"></script>
+	  <script src="js/main.min.js"></script>
+	  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	
+	  <script type="text/javascript" src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
+
+	
+	  <script type="text/javascript">
+			$('.owl-carousel').owlCarousel({
+			loop:false,
+			margin:50,
+			nav:true,
+			dots: false,
+			responsive:{
+				0:{
+				items:1,
+				dots: true
+				},
+				600:{
+				items:2
+				},
+				1000:{
+				items:3
+				}
+			}
+			});
+		</script>
+
    </body>
 </html>

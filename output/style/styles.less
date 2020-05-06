@@ -851,14 +851,38 @@ JDmainmodal {
         }
 
     }
+    .owl-prev.disabled {
+        display: none !important;
+    }
+    
+    .owl-next {
+        height: 42px;
+        width: 65px;
+        background-image: url(../website-images/arrow-right-white.png)!important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        background-size: contain !important;
+        display: table!important;
+        position: absolute;
+        right: -5em;
+        top: 43%;
+        color: transparent !important;
+        cursor: pointer !important;
+        &:hover {
+            background-color: #fff !important;
+            opacity: 1 !important;
+        }
+    }
+}
+
+.chat-messages-slider-wrapper {
+    padding: 0;
 }
 
 // CHAT
 
 .chat-message-home-wrapper {
-    font-size: @md-size;
-    flex: 0 0 26.333333%;
-    max-width: 26.333333%;
+    font-size: @md-size; 
 
     .chat-message-home-head {
         .chat-message-home-header;
@@ -1102,7 +1126,7 @@ JDmainmodal {
     display: block;
 }
 
-// Responsive -----------------------------------
+// Responsive 360 -----------------------------------
 .menu-mbl-btn {
     display: none;
 }
@@ -1452,4 +1476,95 @@ JDmainmodal {
 
 .image-block-conditions {
     max-width: @full-width;
+}
+
+// Responsive Chat Leads Plataform ---------------
+
+@media screen and (max-width: 1190px) {
+    .chatleads-content-wrapper .nav-pills a {
+        padding: 0 55px;
+    }
+
+    #pills-base .m-auto.col-md-9 {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .content-chatlead-wrapper {
+        max-width: 100%;
+        width: 100%;
+        padding: 30px;
+        height: 88vh;
+    }
+
+    .chat-leads-jd-plataform{
+        .jd-main-chat-popup, .footer-wrapper {
+            display: block;
+        }
+    } 
+    .jd-main-bottom-wrapper .footer-wrapper {
+        height: 81px;
+        .small-jd-link a {
+            padding: 3px !important;
+        }
+        .copyrights {
+            text-align: right;
+        }
+    }
+
+    .message-resume {
+        flex-direction: column;
+        margin-bottom: 1em;
+    }
+
+    .message-resume .yellow-button {
+        width: 100%;
+        max-width: 100%;
+        height: 40px;
+    }
+
+    .messages-wrapper .message-resume-infos {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    .chatleads-content-wrapper .nav-pills .nav-item {
+        width: 49%;
+        margin-bottom: 1em;
+    }
+
+    .chatleads-content-wrapper .nav-pills a {
+        height: 70px;
+    }
+
+    .content-chatlead-wrapper{
+        padding: 10px;
+        overflow: auto;
+        padding-bottom: 3em;
+    }
+
+    .extrair-base-dia {
+        flex-direction: column;
+    }
+    
+    .extrairbase-wrapper #extrairbasedia {
+        margin: 0;
+        flex-direction: column;
+        #datepicker {
+            margin-top: 1em;
+        }
+        
+        .yellow-button {
+            margin-top: 1em !important;
+        }
+    }
+    
+    .extrair-base-completa {
+        flex-direction: column;
+    }
+    .owl-theme .owl-nav{
+        display: none !important;
+    }
 }
