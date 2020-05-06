@@ -19,7 +19,7 @@ $("#toggle").on('click', function () {
  
 // Open chat - Fale com Concessionário
 $("#openJDChatWindow").click(function(){
-    $JDMainChat.addClass('slim');
+    $JDMainChat.toggleClass('slim');
 });
  
 
@@ -98,27 +98,5 @@ $("#openJDChatWindowMbl").click(function(){
   if ($JDMobileNav.hasClass('show')) {
     $JDMobileNav.removeClass('show');
   };
-});
-
-// slider
-$('.owl-carousel').owlCarousel({
-  loop:true,
-  margin:10,
-  responsiveClass:true,
-  responsive:{
-      0:{
-          items:1,
-          nav:true
-      },
-      600:{
-          items:2,
-          nav:false
-      },
-      1000:{
-          items:3,
-          nav:true,
-          loop:false
-      }
-  }
 });
  

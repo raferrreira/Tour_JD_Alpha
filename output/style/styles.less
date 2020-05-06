@@ -65,6 +65,10 @@ body {
     }
 }
 
+.container.jd-content-wrapper.p-0 {
+    max-width: 75%;
+}
+
 // VARIABLES --------------------------------
 
 // Main Colors
@@ -423,12 +427,13 @@ body {
     .footer-wrapper {
         background: @white-color;
         padding: 3px 2em;
-        height: 40px;
+        height: 32px;
 
         .small-jd-link a {
             font-size: @md-size;
             color: @green-color;
             font-weight: @regular-wgt;
+            padding: 5px 10px;
         }
     }
 
@@ -448,8 +453,8 @@ body {
     display: table;
     margin: 0;
     position: fixed;
-    bottom: 5em;
-    left: 4em;
+    bottom: 32px;
+    left: 0;
 }
 
 
@@ -553,7 +558,7 @@ JDmainmodal {
     .close {
         opacity: 1;
         position: absolute;
-        right: 4.5em;
+        right: 5em;
         top: 10px;
         width: 20px;
         cursor: pointer;
@@ -921,9 +926,9 @@ JDmainmodal {
 }
 
 .chat-room {
-    width: 365px;
+    width: 345px;
     position: fixed;
-    bottom: 40px;
+    bottom: 32px;
     right: 2em;
 
     .chat-message-home-head {
@@ -1158,6 +1163,9 @@ JDmainmodal {
 }
 
 @media screen and (max-width:991px) {
+    .container.jd-content-wrapper.p-0{
+        max-width: @full-width;
+    }
     .jd-main-navigation .main-jd-link a {
         padding: .5rem 1rem;
     }
@@ -1170,10 +1178,10 @@ JDmainmodal {
         width: @full-width  !important;
         bottom: inherit;
         right: 0;
-        height: 93%;
+        width: 45%;
         display: block !important;
         top: 55px;
-
+        height: 93%;
         .card-footer {
             position: absolute;
             bottom: 0;
@@ -1187,18 +1195,19 @@ JDmainmodal {
 
         #closeButton {
             font-size: 0;
+            .default-border !important;
         }
 
         #closeButton img {
             position: relative;
-            top: -15px;
+            top: 0px;
             right: 10px;
         }
     }
 
 
     .chat-room.small-chat .my-custom-scrollbar {
-        padding-bottom: 5em !important;
+        padding-bottom: 10em !important;
     }
 
     .jd-content-wrapper {
@@ -1240,7 +1249,7 @@ JDmainmodal {
     .jd-main-mbl-nav.show {
         display: block;
         background: @white-color;
-        width: @85-width;
+        width: 45%;
         .flex-between;
         position: absolute;
         top: 0;
@@ -1469,6 +1478,12 @@ JDmainmodal {
     }
 }
 
+@media screen and (max-width: 500px){
+    .jd-main-mbl-nav.show { 
+        width: 85%;
+    }
+}
+
 .mobile-img {
     width: @full-width;
     max-width: @full-width;
@@ -1567,4 +1582,28 @@ JDmainmodal {
     .owl-theme .owl-nav{
         display: none !important;
     }
+    // login page
+    .login-page-wrapper {
+
+        .col-md-9 {
+            max-width: 100%;
+            width: 100%;
+            flex: 0 0 100%;
+            height: 100%!important;
+        }
+        .modal-body {
+            flex-direction: column;
+            padding-top: 1em !important;
+            height: auto!important;
+        }  
+        
+        .JD-Main-Login-Form {
+            margin-bottom: 0 !important;
+        }
+        
+        .img-fluid {
+            height: 70px;
+        }
+    }
+    
 }
