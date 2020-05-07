@@ -861,23 +861,25 @@ JDmainmodal#ModalSpecialConditions .close {
         }
 
     }
+
     .owl-prev.disabled {
         display: none !important;
     }
-    
+
     .owl-next {
         height: 42px;
         width: 65px;
-        background-image: url(../website-images/arrow-right-white.png)!important;
+        background-image: url(../website-images/arrow-right-white.png) !important;
         background-repeat: no-repeat !important;
         background-position: center !important;
         background-size: contain !important;
-        display: table!important;
+        display: table !important;
         position: absolute;
         right: -5em;
         top: 43%;
         color: transparent !important;
         cursor: pointer !important;
+
         &:hover {
             background-color: #fff !important;
             opacity: 1 !important;
@@ -892,7 +894,7 @@ JDmainmodal#ModalSpecialConditions .close {
 // CHAT
 
 .chat-message-home-wrapper {
-    font-size: @md-size; 
+    font-size: @md-size;
 
     .chat-message-home-head {
         .chat-message-home-header;
@@ -1137,6 +1139,30 @@ JDmainmodal#ModalSpecialConditions .close {
 }
 
 // Responsive 360 -----------------------------------
+@media screen and (min-width: 1600px) {
+    .nav-item.logo-section {
+        flex: inherit;
+        margin-right: 2em;
+    }
+
+    .nav-item.main-jd-link {
+        flex: inherit;
+    }
+
+    .nav-item.conectese-btn.main-jd-link {
+        position: absolute;
+        height: 100%;
+        right: 0;
+
+        a {
+            width: 100%;
+            padding-left: 5em;
+            padding-right: 5em;
+        }
+    }
+}
+
+
 .menu-mbl-btn {
     display: none;
 }
@@ -1168,9 +1194,10 @@ JDmainmodal#ModalSpecialConditions .close {
 }
 
 @media screen and (max-width:991px) {
-    .container.jd-content-wrapper.p-0{
+    .container.jd-content-wrapper.p-0 {
         max-width: @full-width;
     }
+
     .jd-main-navigation .main-jd-link a {
         padding: .5rem 1rem;
     }
@@ -1187,6 +1214,7 @@ JDmainmodal#ModalSpecialConditions .close {
         display: block !important;
         top: 55px;
         height: 93%;
+
         .card-footer {
             position: absolute;
             bottom: 0;
@@ -1487,8 +1515,8 @@ JDmainmodal#ModalSpecialConditions .close {
     }
 }
 
-@media screen and (max-width: 500px){
-    .jd-main-mbl-nav.show { 
+@media screen and (max-width: 500px) {
+    .jd-main-mbl-nav.show {
         width: 85%;
     }
 }
@@ -1523,16 +1551,21 @@ JDmainmodal#ModalSpecialConditions .close {
         height: 88vh;
     }
 
-    .chat-leads-jd-plataform{
-        .jd-main-chat-popup, .footer-wrapper {
+    .chat-leads-jd-plataform {
+
+        .jd-main-chat-popup,
+        .footer-wrapper {
             display: block;
         }
-    } 
+    }
+
     .jd-main-bottom-wrapper .footer-wrapper {
         height: 81px;
+
         .small-jd-link a {
             padding: 3px !important;
         }
+
         .copyrights {
             text-align: right;
         }
@@ -1563,7 +1596,7 @@ JDmainmodal#ModalSpecialConditions .close {
         height: 70px;
     }
 
-    .content-chatlead-wrapper{
+    .content-chatlead-wrapper {
         padding: 10px;
         overflow: auto;
         padding-bottom: 3em;
@@ -1572,25 +1605,28 @@ JDmainmodal#ModalSpecialConditions .close {
     .extrair-base-dia {
         flex-direction: column;
     }
-    
+
     .extrairbase-wrapper #extrairbasedia {
         margin: 0;
         flex-direction: column;
+
         #datepicker {
             margin-top: 1em;
         }
-        
+
         .yellow-button {
             margin-top: 1em !important;
         }
     }
-    
+
     .extrair-base-completa {
         flex-direction: column;
     }
-    .owl-theme .owl-nav{
+
+    .owl-theme .owl-nav {
         display: none !important;
     }
+
     // login page
     .login-page-wrapper {
 
@@ -1598,21 +1634,22 @@ JDmainmodal#ModalSpecialConditions .close {
             max-width: 100%;
             width: 100%;
             flex: 0 0 100%;
-            height: 100%!important;
+            height: 100% !important;
         }
+
         .modal-body {
             flex-direction: column;
             padding-top: 1em !important;
-            height: auto!important;
-        }  
-        
+            height: auto !important;
+        }
+
         .JD-Main-Login-Form {
             margin-bottom: 0 !important;
         }
-        
+
         .img-fluid {
             height: 70px;
         }
     }
-    
+
 }
