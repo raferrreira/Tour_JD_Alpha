@@ -10,7 +10,7 @@ $('#chat').on('click', function () {
 })
 
 $('#closeButton').not('#toggle').on('click', function () {
-    $JDMainChat.hide();
+    $JDMainChat.toggleClass('slim')
 })
 
 $("#toggle").on('click', function () {
