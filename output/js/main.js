@@ -21,6 +21,8 @@ $("#toggle").on('click', function () {
 $("#openJDChatWindow").click(function(){
     $JDMainChat.toggleClass('slim');
 });
+ 
+
 
 // Form Validation
 (function() {
@@ -50,24 +52,51 @@ $('button[data-toggle="modal"]').on('click', function () {
     };
 });
 
-// slider
-$('.owl-carousel').owlCarousel({
-  loop:true,
-  margin:10,
-  responsiveClass:true,
-  responsive:{
-      0:{
-          items:1,
-          nav:true
-      },
-      600:{
-          items:2,
-          nav:false
-      },
-      1000:{
-          items:3,
-          nav:true,
-          loop:false
-      }
-  }
+$('button[data-toggle="modal"]').on('click', function () {
+
+  if ($JDMainModal.hasClass('show') || !$JDMainModal.is(':hidden')) {
+      $JDMainModal.css('display', 'none');
+      $JDMainModal.removeClass('show');
+  };
 });
+
+// Visualizar mensagem na pagina de chat leads
+const $JDmessagebutton = $('.opened-message');
+
+$('a[aria-controls="pills-messages"]').on('click', function () {
+
+    if ($JDmessagebutton.hasClass('show')) { 
+        $JDmessagebutton.removeClass('show');
+    };
+});
+
+$('button[href="#pills-message"]').on('click', function () {
+      $JDmessagebutton.addClass('show');
+});
+
+// menu mobile 
+const $JDMobileNav = $('.jd-main-mbl-nav');
+
+$('.menu-mbl-btn').on('click', function () { 
+      $JDMobileNav.addClass('show'); 
+}); 
+
+$('.back-btn').on('click', function () { 
+  $JDMobileNav.removeClass('show'); 
+});
+
+$('.nav-link[data-toggle="modal"]').on('click', function () {
+
+  if ($JDMobileNav.hasClass('show')) {
+      $JDMobileNav.removeClass('show');
+  };
+});
+
+
+$("#openJDChatWindowMbl").click(function(){
+  $("#JDMainChat").removeClass("slim");
+  if ($JDMobileNav.hasClass('show')) {
+    $JDMobileNav.removeClass('show');
+  };
+});
+ 
