@@ -439,6 +439,12 @@ body {
 
     .copyrights {
         color: @green-color;
+        a{
+            &:hover {
+                color: @green-color;
+                text-decoration: underline;
+            }
+        }
     }
 }
 
@@ -458,8 +464,8 @@ body {
 }
 
 
-.chat-room.slim{
-    .card-header{
+.chat-room.slim {
+    .card-header {
         background-image: url(../website-images/btnchatopen.png);
         background-repeat: no-repeat;
         background-position: 97% 14px;
@@ -488,7 +494,8 @@ body {
         background-image: url(../website-images/btnchatclose.png);
         background-repeat: no-repeat;
         background-position: 97% 23px;
-        #closeButton{
+
+        #closeButton {
             display: none;
         }
     }
@@ -620,6 +627,7 @@ JDmainmodal {
                 color: @white-color;
             }
         }
+
         img {
             max-height: 455px;
         }
@@ -1230,8 +1238,8 @@ JDmainmodal#ModalSpecialConditions .close {
         display: block !important;
         top: 55px;
         height: 93%;
-        
-        .card-header{
+
+        .card-header {
             background-image: url(../website-images/arrow-left-white.png);
             background-position: 94% 12px;
         }
