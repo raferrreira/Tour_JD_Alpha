@@ -49,31 +49,40 @@
       </style>
    </head>
    <body>
+      
       <!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - -->
-      <script type="text/javascript" src="pano2vr_player.js"></script>
-      <script type="text/javascript" src="skin.js"></script>
-      <script src="webvr/three.min.js"></script>
-      <script src="webvr/webvr-polyfill.min.js"></script>
-      <div id="container" style="width:100%;height:100%;overflow:hidden;">
-         <br>Loading...<br><br>
-      </div>
-      <script type="text/javascript">
-         // create the panorama player with the container
-         pano=new pano2vrPlayer("container");
-         // add the skin object
-         skin=new pano2vrSkin(pano);
-         // load the configuration
-         
-         window.addEventListener("load", function() {
-         	pano.readConfigUrlAsync("pano.xml");
-         });
-      </script>
-      <noscript>
-         <p><b>Please enable Javascript!</b></p>
-      </noscript>
+		<script type="text/javascript" src="pano2vr_player.js">
+		</script>
+		<script type="text/javascript" src="skin.js">
+		</script>
+		<link rel="stylesheet" href="css3D/panostyles.css"/>
+		<script src="https://www.youtube.com/iframe_api"></script>
+		<script src="webvr/three.min.js"></script>
+      <script src="webvr/webvr-polyfill.min.js"></script> 
+
+      <!-- loader -->
+		<div id="container" style="width:100%;height:100%;overflow:hidden;">
+		   <br>Loading...<br><br>
+		</div>
+		<script type="text/javascript">
+	
+			// create the panorama player with the container
+			pano=new pano2vrPlayer("container");
+			// add the skin object
+			skin=new pano2vrSkin(pano);
+			// load the configuration
+		
+			window.addEventListener("load", function() {
+				pano.readConfigUrlAsync("pano.xml");
+			});
+		</script>
+		<noscript>
+			<p><b>Please enable Javascript!</b></p>
+		</noscript>
       <!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - --> 
-      <!-- Hack needed to hide the url bar on iOS 9, iPhone 5s --> 
-      <div style="width:1px;height:1px;"></div>
+         <!-- Hack needed to hide the url bar on iOS 9, iPhone 5s --> 
+         <div style="width:1px;height:1px;"></div>
+      
       <div class="container-fluid main-content-jd-plataform p-0">
 
          <!-- JD HEADER -->
@@ -507,7 +516,7 @@
 					</div>
                      <div class="max-height-scrolling p-5">
                         <div class="modal-body scrolling-max-height p-5 d-flex justify-content-center align-items-center p-0">
-                           <div class="col-lg-10 ConcessionariosProximos-form">
+                           <div class="m-auto col-lg-10 ConcessionariosProximos-form">
                               <div class="form-header">
                                  <h2>Bem vindo à<br>JohnDeere Coneceta</h2>
                                  <h4>Estes são os concessionários mais próximos,<br>escolha o de sua preferência</h4>
