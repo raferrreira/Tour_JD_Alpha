@@ -49,23 +49,21 @@
       </style>
    </head>
    <body>
-      
       <!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - -->
-		<script type="text/javascript" src="pano2vr_player.js">
-		</script>
-		<script type="text/javascript" src="skin.js">
-		</script>
+		<script type="text/javascript" src="pano2vr_player.js"></script>
+		<script type="text/javascript" src="skin.js"></script>
 		<link rel="stylesheet" href="css3D/panostyles.css"/>
 		<script src="https://www.youtube.com/iframe_api"></script>
 		<script src="webvr/three.min.js"></script>
       <script src="webvr/webvr-polyfill.min.js"></script> 
 
-      <!-- loader -->
+
 		<div id="container" style="width:100%;height:100%;overflow:hidden;">
 		   <br>Loading...<br><br>
 		</div>
 		<script type="text/javascript">
 	
+
 			// create the panorama player with the container
 			pano=new pano2vrPlayer("container");
 			// add the skin object
@@ -82,9 +80,46 @@
       <!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - --> 
          <!-- Hack needed to hide the url bar on iOS 9, iPhone 5s --> 
          <div style="width:1px;height:1px;"></div>
-      
-      <div class="container-fluid main-content-jd-plataform p-0">
 
+      <div id="preloader" aria-busy="true" aria-label="Loading, please wait." role="progressbar" style="position: absolute;top: 0;left: 0;z-index: 99999999;">
+         <video autoplay muted loop>
+            <source type="video/mp4" src="website-images/loadingscreenvideo.mp4"></source> 
+            <p>Sorry, your browser does not support the &lt;video&gt; element.</p>
+         </video>
+         <style>
+            #preloader {
+               display: block;
+               position: absolute;
+               top: 0;
+               left: 0;
+               z-index: 9999999999;
+               width: 100vw;
+               height: 100vh;
+            }
+            #preloader video {
+               position: fixed;
+               right: 0;
+               bottom: 0;
+               min-width: 100%;
+               min-height: 100%;
+            }
+         </style>
+      </div>
+      
+      <script> 
+
+         setTimeout(function preloader() {
+            var preloader = document.getElementById("preloader");
+            preloader.style.display = "none";
+            preloader.setAttribute("aria-busy", "false");
+            document.getElementById("site").style.opacity = "1";
+         }, 6000);
+         
+         window.onload = preloader;
+      </script>
+
+      <div class="container-fluid main-content-jd-plataform p-0" id="site" style="opacity: 0;">
+         
          <!-- JD HEADER -->
          <section>
             <div class="container jd-content-wrapper p-0">
