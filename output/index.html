@@ -82,11 +82,11 @@
          <div style="width:1px;height:1px;"></div>
 
       <!-- SPLASH SCREEN VIDEO -->
-      <div id="preloader" aria-busy="true" aria-label="Loading, please wait." role="progressbar" style="position: absolute;top: 0;left: 0;z-index: 99999999;">
-         <video autoplay muted loop>
-            <source type="video/mp4" src="website-images/loadingscreenvideo.mp4"></source> 
-            <p>Sorry, your browser does not support the &lt;video&gt; element.</p>
-         </video>
+      <div id="preloader" aria-busy="true" aria-label="Loading, please wait." role="progressbar">
+         <div class="splashscreen col-lg-12 p-0">
+            <img src="website-images/loadingscreenlogo.png" class="loadingscreenlogo img-fluid p-sm-5"/>
+            <p class="loading-p pulse">Carregando...</p>
+         </div> 
          <style>
             #preloader {
                display: block;
@@ -96,14 +96,53 @@
                z-index: 9999999999;
                width: 100vw;
                height: 100vh;
+               background-image:url(website-images/loadingscreenbg.png);
+               background-position: center;
+               background-size: cover;
+               background-repeat: no-repeat;
+            } 
+            
+            .splashscreen {
+               position: relative;
+               height: 100%;
             }
-            #preloader video {
-               position: fixed;
-               right: 0;
-               bottom: 0;
-               min-width: 100%;
-               min-height: 100%;
+
+            .splashscreen img {
+               position: absolute;
+               left: 50%;
+               top: 50%;
+               transform: translate(-50%, -50%);
             }
+            @media screen and (max-width: 450px){
+               .splashscreen img{
+                  width: 95%;
+               }
+            }
+            .pulse{
+               transform: scale(1);
+               animation: pulse 2s infinite;
+               position: absolute;
+               color: #fff;
+               text-align: center;
+               width: 100%;
+               font-size: 22px;
+               bottom: 4em;
+            }
+
+            @keyframes pulse {
+               0% {
+                  opacity: 0.2; 
+               }
+
+               70% {
+                  opacity: 1; 
+               }
+
+               100% {
+                  opacity: 0.2; 
+               }
+            }
+
          </style>
       </div>
       
