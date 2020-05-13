@@ -632,11 +632,36 @@ JDmainmodal {
         img {
             max-height: 455px;
         }
+
+        @media screen and (min-width:992px) {
+            img {
+                box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+            }
+        }
     }
 }
 
 JDmainmodal#ModalSpecialConditions .close {
     right: 5.4em;
+
+    @media screen and (max-width:1200px) {
+        & {
+            right: 5em;
+        }
+    }
+    @media screen and (max-width:1999px) {
+        & {
+            right: 3.5em;
+        }
+    }
+}
+
+
+.image-block-conditions {
+    padding: .5em !important;
+    @media screen and (max-width:991px){
+        padding: 0 !important;
+    }
 }
 
 // ModalEventCalendar
@@ -1225,6 +1250,7 @@ JDmainmodal#ModalSpecialConditions .close {
         background-image: url(../website-images/conversation.png);
         background-size: 25px;
         background-position: center;
+
         p {
             display: none;
         }
