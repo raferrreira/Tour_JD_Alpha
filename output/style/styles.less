@@ -1220,15 +1220,14 @@ JDmainmodal#ModalSpecialConditions .close {
 
 @media screen and (max-width:991px) {
     .chat-room.small-chat.slim #toggle {
-        height: 100%;
+        height: @full-width;
         border-radius: 5em;
         background-image: url(../website-images/conversation.png);
         background-size: 25px;
         background-position: center;
-    }
-
-    .chat-room.small-chat.slim #toggle p {
-        display: none;
+        p {
+            display: none;
+        }
     }
 
     #JDMainChat.slim {
@@ -1332,7 +1331,7 @@ JDmainmodal#ModalSpecialConditions .close {
         .flex-between;
         position: absolute;
         top: 0;
-        z-index: 99999;
+        z-index: 999999;
         right: 0;
         overflow: scroll;
         overflow-x: hidden;
@@ -1381,6 +1380,14 @@ JDmainmodal#ModalSpecialConditions .close {
         }
     }
 
+
+    .menu-opened .overlay-mobile-menu {
+        position: fixed;
+        height: @full-width;
+        width: @full-width;
+        background: #00000059;
+        z-index: 99999;
+    }
 
     .max-height-scrolling {
         min-height: @full-width  !important;

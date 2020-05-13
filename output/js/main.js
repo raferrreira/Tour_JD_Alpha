@@ -76,13 +76,18 @@ $('button[href="#pills-message"]').on('click', function () {
 
 // menu mobile 
 const $JDMobileNav = $('.jd-main-mbl-nav');
+const $Body = $('body');
+const $Overlay = $('.overlay-mobile-menu');
+
 
 $('.menu-mbl-btn').on('click', function () { 
       $JDMobileNav.addClass('show'); 
+      $Body .addClass('menu-opened');
 }); 
 
 $('.back-btn').on('click', function () { 
   $JDMobileNav.removeClass('show'); 
+  $Body .removeClass('menu-opened');
 });
 
 $('.nav-link[data-toggle="modal"]').on('click', function () {
@@ -90,13 +95,30 @@ $('.nav-link[data-toggle="modal"]').on('click', function () {
   if ($JDMobileNav.hasClass('show')) {
       $JDMobileNav.removeClass('show');
   };
+  if ($Body.hasClass('menu-opened')) {
+      $Body.removeClass('menu-opened');
+  };
+
 });
 
+$Overlay.on('click', function () {
+
+  if ($JDMobileNav.hasClass('show')) {
+      $JDMobileNav.removeClass('show');
+  };
+  if ($Body.hasClass('menu-opened')) {
+      $Body.removeClass('menu-opened');
+  };
+
+});
 
 $("#openJDChatWindowMbl").click(function(){
   $("#JDMainChat").removeClass("slim");
   if ($JDMobileNav.hasClass('show')) {
-    $JDMobileNav.removeClass('show');
+      $JDMobileNav.removeClass('show');
+  };
+  if ($Body.hasClass('menu-opened')) {
+      $Body.removeClass('menu-opened');
   };
 });
  
