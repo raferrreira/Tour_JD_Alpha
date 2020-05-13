@@ -439,7 +439,8 @@ body {
 
     .copyrights {
         color: @green-color;
-        a{
+
+        a {
             &:hover {
                 color: @green-color;
                 text-decoration: underline;
@@ -1218,16 +1219,32 @@ JDmainmodal#ModalSpecialConditions .close {
 }
 
 @media screen and (max-width:991px) {
+    .chat-room.small-chat.slim #toggle {
+        height: 100%;
+        border-radius: 5em;
+        background-image: url(../website-images/conversation.png);
+        background-size: 25px;
+        background-position: center;
+    }
+
+    .chat-room.small-chat.slim #toggle p {
+        display: none;
+    }
+
+    #JDMainChat.slim {
+        width: 50px !important;
+        height: 50px;
+        top: 90%;
+        right: 10px;
+        border-radius: 5em;
+    }
+
     .container.jd-content-wrapper.p-0 {
         max-width: @full-width;
     }
 
     .jd-main-navigation .main-jd-link a {
         padding: .5rem 1rem;
-    }
-
-    .chat-room.small-chat.slim {
-        display: none !important;
     }
 
     .chat-room.small-chat {
